@@ -16,7 +16,6 @@ Install the application by downloading the files below based on your operating s
 ## Usage
 
 ## See also
-Sphinx auto-generated documentation is available one directory up in the `docs` folder. For further discussion of the mathematics behind this model, see [here](https://sabs-r3.github.io/software-engineering-projects/01-introduction/index.html).
 
 ## Authors and acknowledgment
 The authors are [Kallista Angeloff][1], [Shirin Ermis][2], [Justin Leung][3], [Adrian Mag][4], [Spencer Pesvner][5] and [Sam Scivier][6]. 
