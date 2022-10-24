@@ -18,7 +18,7 @@ Install the application by downloading the files below based on your operating s
 ## See also
 
 ## Authors and acknowledgment
-The authors are [Kallista Angeloff][1], [Shirin Ermis][2], [Justin Leung][3], [Adrian Mag][4], [Spencer Pesvner][5] and [Sam Scivier][6]. 
+The authors are [Kallista Angeloff][1], [Shirin Ermis][2], [Justin Leung][3], [Adrian Mag][4], [Spencer Pevsner][5] and [Sam Scivier][6]. 
 
 [1]: https://github.com/kallista-angeloff
 [2]: https://github.com/shirin-ermis
