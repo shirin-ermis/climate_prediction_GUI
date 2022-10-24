@@ -1,5 +1,5 @@
 #
-# pkmodel setuptools script
+# climpred setuptools script
 #
 from setuptools import setup, find_packages
 
@@ -8,16 +8,17 @@ def get_version():
     """
     Get version number from the pkmodel module.
 
-    The easiest way would be to just ``import pkmodel ``, but note that this may
-    fail if the dependencies have not been installed yet. Instead, we've put
-    the version number in a simple version_info module, that we'll import here
-    by temporarily adding the oxrse directory to the pythonpath using sys.path.
+    The easiest way would be to just ``import pkmodel ``, but note that this
+    may fail if the dependencies have not been installed yet. Instead, we've
+    put the version number in a simple version_info module, that we'll import
+    here by temporarily adding the oxrse directory to the pythonpath
+    using sys.path.
     """
     import os
     import sys
 
-    sys.path.append(os.path.abspath('pkmodel'))
-    from version_info import VERSION as version
+    sys.path.append(os.path.abspath('climpred'))
+    from climpred.version_info import VERSION as version
     sys.path.pop()
 
     return version
@@ -34,12 +35,13 @@ def get_readme():
 # Go!
 setup(
     # Module name (lowercase)
-    name='pkmodel',
+    name='climpred',
 
     # Version
     version=get_version(),
 
-    description='An example Python project.',
+    description='A python library for calculating temperatures in a 2-layer \
+        atmospheric model.',
 
     long_description=get_readme(),
 
@@ -49,14 +51,15 @@ setup(
 
     # author_email='',
 
-    maintainer='Martin Robinson',
+    maintainer='Shirin Ermis',
 
-    maintainer_email='martin.robinson@cs.ox.ac.uk',
+    maintainer_email='shirin.ermis@env-res.ox.ac.uk',
 
-    url='https://github.com/SABS-R3/2020-software-engineering-projects-pk',
+    url='https://sabs-r3.github.io/software-engineering-project2/\
+        01-introduction/index.html',
 
     # Packages to include
-    packages=find_packages(include=('pkmodel', 'pkmodel.*')),
+    packages=find_packages(include=('climpred', 'climpred.*')),
 
     # List of dependencies
     install_requires=[
