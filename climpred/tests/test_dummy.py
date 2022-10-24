@@ -3,7 +3,8 @@
 import unittest
 # import climpred as cp
 
-dummy = 5 * 5 # just to have a test, would not be in normal testing
+dummy = 5 * 5  # just to have a test, would not be in normal testing
+
 
 class DummyTest(unittest.TestCase):
     """
@@ -15,4 +16,3 @@ class DummyTest(unittest.TestCase):
         """
         # dummy = cp.Dummy() # doesn't exist, oh well
         self.assertEqual(dummy, 25)
-
