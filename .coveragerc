@@ -1,0 +1,4 @@
+[run]
+source = climate_prediction_GUI
+omit =
+    climpred/tests/*
