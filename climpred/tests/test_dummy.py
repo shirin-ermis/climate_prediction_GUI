@@ -1,7 +1,7 @@
 # Dummy test to be used as a template for unit testing
 
 import unittest
-import climpred as cp
+# import climpred as cp
 
 dummy = 5 * 5 # just to have a test, would not be in normal testing
 
