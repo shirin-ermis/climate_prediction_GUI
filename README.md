@@ -4,8 +4,8 @@ Climate prediction GUI is a package that generates a simple model of vertical en
 
 The package solves for the temperature of the surface and the two layers in the atmosphere. Users can adjust the values through the GUI, and the temperature profile will be automatically updated to reflect the results from the changed input.
 
-![Two-layered atmosphere model](https://biocycle.atmos.colostate.edu/shiny/2layer/model.png)  
-Sourced from https://biocycle.atmos.colostate.edu/shiny/2layer/.
+![Two-layered atmosphere model](https://biocycle.atmos.colostate.edu/shiny/2layer/model.png | width = 500)  
+<sub><sup>Sourced from https://biocycle.atmos.colostate.edu/shiny/2layer/</sup></sub>
 
 ## Installation
 Install the application by downloading the files below based on your operating system:  
