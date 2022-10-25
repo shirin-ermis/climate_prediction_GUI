@@ -9,12 +9,12 @@ class Plot():
     in the atmospheric layers
     """
 
-    def __init__(self):
+    def __init__(self, T):
         self.plot = None
+        self.create_plot(T)
 
-    def create_plot(self, TS, T1, T2):
+    def create_plot(self, T):
         # Data
-        T = np.array([TS, T1, T2])
         heights = np.array([0, 1, 2])
 
         # Plotting
@@ -22,7 +22,8 @@ class Plot():
         plt.plot(T, heights)
 
         # Plot parameters
-        plt.yticks(ticks=[0, 1, 2], labels=['surface', 'lower level', 'upper level'])
+        plt.yticks(ticks=[0, 1, 2], labels=['surface', 'lower level',
+                                            'upper level'])
         # plt.yticklabel(['surface', 'lower level', 'upper level'])
         plt.xlim(-100, 100)
         plt.ylabel('Height')
