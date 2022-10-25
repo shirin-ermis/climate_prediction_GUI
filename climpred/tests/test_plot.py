@@ -1,9 +1,9 @@
 import unittest
 import climpred as cp
 import numpy as np
-import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use('TKagg')
+import matplotlib.pyplot as plt
 
 
 class PlotTest(unittest.TestCase):
