@@ -38,7 +38,7 @@ setup(
     name='climpred',
 
     # Version
-    version=get_version(),
+    version='0.0.1',
 
     description='A python library for calculating temperatures in a 2-layer \
         atmospheric model.',
