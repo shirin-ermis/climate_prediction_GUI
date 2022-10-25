@@ -1,8 +1,6 @@
-"""pkmodel is a Pharmokinetic modelling library.
-
-It contains functionality for creating, solving, and visualising the solution
-of Parmokinetic (PK) models
-
+"""
+Climate prediction GUI is a package that generates a simple model of vertical
+energy transfer and temperatures in the Earth system
 """
 # Import version info
 from .version_info import VERSION_INT, VERSION  # noqa
@@ -11,3 +9,6 @@ from .version_info import VERSION_INT, VERSION  # noqa
 # Template:
 # from .<file> import <Class> # noqa
 # e.g. from .model import Model    # noqa
+from .model import Model  # noqa
+from .controller import Controller  # noqa
+from .view import View  # noqa
