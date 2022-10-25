@@ -12,7 +12,7 @@ class Plot():
     def __init__(self):
         self.plot = None
 
-    def creat_plot(self, TS, T1, T2):
+    def create_plot(self, TS, T1, T2):
         # Data
         T = np.array([TS, T1, T2])
         heights = np.array([0, 1, 2])
@@ -22,8 +22,8 @@ class Plot():
         plt.plot(T, heights)
 
         # Plot parameters
-        plt.set_yticks([0, 1, 2])
-        plt.set_yticklabels(['surface', 'lower level', 'upper level'])
-        self.plot.xlim(-100, 100)
-        self.plot.ylabel('Height')
-        self.plot.xlabel('Temperature / °C')
+        plt.yticks(ticks=[0, 1, 2], labels=['surface', 'lower level', 'upper level'])
+        # plt.yticklabel(['surface', 'lower level', 'upper level'])
+        plt.xlim(-100, 100)
+        plt.ylabel('Height')
+        plt.xlabel('Temperature / °C')
