@@ -9,8 +9,9 @@ class Plot():
     in the atmospheric layers
     """
 
-    def __init__(self):
+    def __init__(self, slider_value):
         self.plot = None
+        self.create_plot(slider_value, 2, 3)
 
     def create_plot(self, TS, T1, T2):
         # Data

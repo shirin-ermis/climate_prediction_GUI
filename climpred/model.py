@@ -1,11 +1,9 @@
-
+from plot import Plot
 
 class Model():
     """ Docs
     """
 
     def __init__(self):
-
-        self.previous_value = ''
-        self.value = ''
-        self.operator = ''
+        plot_obj = Plot(1)
+        self.plot = plot_obj.plot
