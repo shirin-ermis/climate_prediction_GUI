@@ -14,6 +14,6 @@ class PlotTest(unittest.TestCase):
         """
         Tests plot creation
         """
-        T = np.array([1, 2, 3])
+        T = np.array([2, 3, 4])
         plot = cp.Plot(T)
         self.assertEqual(type(plot.plot), type(plt.figure()))
