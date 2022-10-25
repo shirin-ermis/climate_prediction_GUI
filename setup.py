@@ -67,7 +67,6 @@ setup(
         'numpy',
         'matplotlib',
         'scipy',
-        'tkinter',
     ],
     extras_require={
         'docs': [
