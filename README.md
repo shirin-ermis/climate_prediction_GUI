@@ -2,7 +2,7 @@
 [![Run on multiple OS](https://github.com/shirin-ermis/climate_prediction_GUI/actions/workflows/os-test.yml/badge.svg)](https://github.com/shirin-ermis/climate_prediction_GUI/actions/workflows/os-test.yml)
 
 
-# Climate Prediction GUI
+# Climate Prediction GUI 🐥
 
 Climate prediction GUI is a package that generates a simple model of vertical energy transfer and temperatures in the Earth system. This model assumes a two-layered atmosphere, to which both layers absorb and reradiate a proportion of the outgoing infrared radiation. The atmosphere is assumed to be transparent to incoming radiation, but with a certain ratio reflected (as determined by the albedo, &alpha). 
 
