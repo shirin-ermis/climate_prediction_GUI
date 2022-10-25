@@ -47,9 +47,12 @@ setup(
 
     license='MIT license',
 
-    # author='',
+    authors='Shirin Ermis, Adrian Mag, Kallista Angeloff, Justin Leung, \
+        Sam Scivier, Spencer Pevsner',
 
-    # author_email='',
+    author_emails='shirin.ermis@env-res.ox.ac.uk, marin.mag@stx.ox.ac.uk, \
+        kallista.angeloff@env-res.ox.ac.uk, justin.leung@univ.ox.ac.uk, \
+        sam.scivier@hertford.ox.ac.uk, spencer.pevsner@env-res.ox.ac.uk',
 
     maintainer='Shirin Ermis',
 
