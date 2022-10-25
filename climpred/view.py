@@ -37,7 +37,7 @@ class View(tk.Tk):
 
     def _make_graph(self):
         x = np.linspace(0, 1, 100)
-        y = np.sin(10*x)
+        y = np.sin(10 * x)
 
         graph_figure = Figure(figsize=(6, 4), dpi=100)
         figure_canvas = FigureCanvasTkAgg(graph_figure, self)
