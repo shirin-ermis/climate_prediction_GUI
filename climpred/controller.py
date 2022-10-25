@@ -1,5 +1,4 @@
-from model import Model
-from view import View
+import climpred as cp
 
 
 class Controller():
@@ -8,8 +7,8 @@ class Controller():
     """
 
     def __init__(self):
-        self.model = Model()
-        self.view = View(self)
+        self.model = cp.Model()
+        self.view = cp.View(self)
 
     def main(self):
         self.view.main()
