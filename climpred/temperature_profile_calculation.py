@@ -11,7 +11,7 @@ S_0 = 1367
 sigma = 5.67e-8
 
 
-def calculate_temperature_matrix(albedo, epsilon_1, epsilon_2, H_S, H_L, S_0):
+def calculate_temperature_matrix():
     '''
     Takes atmospheric parameters and returns a three-point temperature profile.
 
@@ -42,6 +42,14 @@ def calculate_temperature_matrix(albedo, epsilon_1, epsilon_2, H_S, H_L, S_0):
     T_level1, T_level2 (K)
 
     '''
+
+    albedo = 0.3
+    epsilon_1 = 0.5
+    epsilon_2 = 0.5
+    H_S = 50
+    H_L = 50
+    S_0 = 1367
+
     epsilon_matrix = np.array([[-1, epsilon_1, (1 - epsilon_1) * epsilon_2],
                                [epsilon_1, -2 * epsilon_1,
                                epsilon_1 * epsilon_2],
@@ -56,9 +64,3 @@ def calculate_temperature_matrix(albedo, epsilon_1, epsilon_2, H_S, H_L, S_0):
 
     temperature_matrix = (np.dot(epsilon_inverse_matrix, rhs_vector))**0.25
     return np.around(temperature_matrix, 2)
-
-
-print(calculate_temperature_matrix(albedo, epsilon_1, epsilon_2,
-                                   H_S, H_L, S_0))
-
-
