@@ -18,11 +18,12 @@ class Plot():
         heights = np.array([0, 1, 2])
 
         # Plotting
-        fig = plt.figure()
+        self.plot = plt.figure()
         plt.plot(T, heights)
 
         # Plot parameters
-        plt.set_yticklabels(['TS', 'T1', 'T2'])
-        fig.xlim(-100, 100)
-        fig.ylabel('Height')
-        fig.xlabel('Temperature / °C')
+        plt.set_yticks([0, 1, 2])
+        plt.set_yticklabels(['surface', 'lower level', 'upper level'])
+        self.plot.xlim(-100, 100)
+        self.plot.ylabel('Height')
+        self.plot.xlabel('Temperature / °C')
