@@ -1,9 +1,7 @@
 # Dummy test to be used as a template for unit testing
 
 import unittest
-# import climpred as cp
-
-dummy = 5 * 5  # just to have a test, would not be in normal testing
+import climpred as cp
 
 
 class DummyTest(unittest.TestCase):
@@ -14,5 +12,5 @@ class DummyTest(unittest.TestCase):
         """
         Tests Dummy creation.
         """
-        # dummy = cp.Dummy() # doesn't exist, oh well
-        self.assertEqual(dummy, 25)
+        dummy = cp.Model()
+        self.assertEqual(dummy.value, '')
