@@ -1,4 +1,4 @@
 [run]
-source = climate_prediction_GUI
+source = climpred
 omit =
     climpred/tests/*
