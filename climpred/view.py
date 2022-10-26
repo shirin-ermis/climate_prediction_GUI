@@ -1,3 +1,4 @@
+import climpred as cp
 import tkinter as tk
 from tkinter import BOTH, E, HORIZONTAL, LEFT, RIGHT, W, Scale, ttk
 import numpy as np
@@ -7,8 +8,8 @@ from matplotlib.backends.backend_tkagg import (
     FigureCanvasTkAgg,
 )
 import matplotlib.pyplot as plt
-from plot import Plot
 matplotlib.use('TkAgg')
+
 
 
 class View(tk.Tk):
@@ -52,7 +53,7 @@ class View(tk.Tk):
         self.graph_frame.pack(expand=True, fill=BOTH, side=RIGHT, anchor=E)
 
     def _initiate_graph(self):
-        my_dummy_plot = Plot(0)
+        my_dummy_plot = cp.Plot(0)
         self._make_graph(my_dummy_plot)
     
     def _make_graph(self, plot_obj: object):
