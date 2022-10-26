@@ -9,12 +9,12 @@ sigma = 5.67e-8
 class TestTemperatureVector(unittest.TestCase):
 
     def test_vector_length(self):
-        self.assertEqual(len(calculate_temperature_matrix()), 3), \
+        self.assertEqual(len(cp.calculate_temperature_matrix()), 3), \
             "Array length should be 3"
 
     def test_temp_range(self):
         for temp in range(3):
-            assert (200 <= calculate_temperature_matrix()[temp] <= 400), \
+            assert (200 <= cp.calculate_temperature_matrix()[temp] <= 400), \
                 "Temperature out of range"
 
 
