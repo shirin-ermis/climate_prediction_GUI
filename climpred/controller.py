@@ -14,7 +14,10 @@ class Controller():
         self.view.main()
 
     def _on_slider_slide(self, event):
+        # The input_value will be taken from the sliders
         input_value = self.view.slider.get()
+        # The overwritten one is just a dummy because now we don't take
+        # inputs from sliders yet
         input_value_overwritten = cp.calculate_temperature_matrix()
         print(input_value_overwritten)
         my_plot = cp.Plot(input_value_overwritten)
