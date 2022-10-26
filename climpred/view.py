@@ -5,8 +5,9 @@ import matplotlib
 from matplotlib.backends.backend_tkagg import (
     FigureCanvasTkAgg,
 )
-import matplotlib.pyplot as plt
-matplotlib.use('TkAgg')
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt  # noqa
 
 
 class View(tk.Tk):
