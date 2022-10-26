@@ -40,15 +40,15 @@ class View(tk.Tk):
 
     def _make_main_frame(self):
         self.main_frm = ttk.Frame(self)
-        self.main_frm.pack(padx=self.PAD, pady=self.PAD)
+        self.main_frm.grid(sticky="nsew")
 
     def _make_control_frame(self):
         self.control_frame = ttk.Frame(self.main_frm)
-        self.control_frame.pack(expand=True, fill=BOTH, side=LEFT, anchor=W)
+        self.control_frame.grid(column=0,sticky="nsw")
 
     def _make_graph_frame(self):
         self.graph_frame = ttk.Frame(self.main_frm)
-        self.graph_frame.pack(expand=True, fill=BOTH, side=RIGHT, anchor=E)
+        self.graph_frame.grid(column=1, sticky="nse")
 
     def _initiate_graph(self):
         my_dummy_plot = cp.Plot([0, 0, 0])
@@ -76,7 +76,7 @@ class View(tk.Tk):
 
     def _make_slider(self):
         self.slider = Scale(self.control_frame, from_=0, to=200,
-                            orient=HORIZONTAL,
+                            orient=HORIZONTAL, length=250,
                             command=self.controller._on_slider_slide)
         self.slider.set(0)
-        self.slider.pack()
+        self.slider.grid(row=0)
