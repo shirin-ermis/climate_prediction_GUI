@@ -1,0 +1,3 @@
+DISPLAY=$(cat /etc/resolv.conf | awk 'FNR==4 {print $2}')
+DISPLAY+=":0.0"
+LIBGL_ALWAYS_INDIRECT_ON=0

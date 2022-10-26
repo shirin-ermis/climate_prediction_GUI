@@ -9,13 +9,12 @@ class Plot():
     in the atmospheric layers
     """
 
-    def __init__(self, slider_value):
+    def __init__(self, T):
         self.plot = None
-        self.create_plot(slider_value, 2, 3)
+        self.create_plot(T)
 
-    def create_plot(self, TS, T1, T2):
+    def create_plot(self, T):
         # Data
-        T = np.array([TS, T1, T2])
         heights = np.array([0, 1, 2])
 
         # Plotting
