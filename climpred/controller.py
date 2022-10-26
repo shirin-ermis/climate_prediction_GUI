@@ -13,7 +13,7 @@ class Controller():
     def main(self):
         self.view.main()
 
-    def _on_slider_slide(self, event):
+    def _on_press_calculate_button(self):
         # The input_value will be taken from the sliders
         input_value = self.view.slider.get()
         # The overwritten one is just a dummy because now we don't take
