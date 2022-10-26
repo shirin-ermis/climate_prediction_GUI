@@ -63,4 +63,5 @@ def calculate_temperature_matrix():
     epsilon_inverse_matrix = np.linalg.inv(epsilon_matrix)
 
     temperature_matrix = (np.dot(epsilon_inverse_matrix, rhs_vector))**0.25
-    return np.around(temperature_matrix, 2)
+    # converted return to celsius
+    return np.around(temperature_matrix - 273.15, 2)

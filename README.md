@@ -1,5 +1,6 @@
 [![Unit tests](https://github.com/shirin-ermis/climate_prediction_GUI/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/shirin-ermis/climate_prediction_GUI/actions/workflows/unit-tests.yml)
 [![Run on multiple OS](https://github.com/shirin-ermis/climate_prediction_GUI/actions/workflows/os-test.yml/badge.svg)](https://github.com/shirin-ermis/climate_prediction_GUI/actions/workflows/os-test.yml)
+[![codecov](https://codecov.io/gh/shirin-ermis/climate_prediction_GUI/branch/main/graph/badge.svg?token=DLOC4NEPZI)](https://codecov.io/gh/shirin-ermis/climate_prediction_GUI)
 
 
 # Climate Prediction GUI!

@@ -12,3 +12,5 @@ from .version_info import VERSION_INT, VERSION  # noqa
 from .model import Model  # noqa
 from .controller import Controller  # noqa
 from .view import View  # noqa
+from .plot import Plot # noqa
+from .temperature_profile_calculation import calculate_temperature_matrix # noqa
