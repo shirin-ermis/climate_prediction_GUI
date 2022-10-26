@@ -19,8 +19,8 @@ class Controller():
         # The overwritten one is just a dummy because now we don't take
         # inputs from sliders yet
         input_value_overwritten = cp.calculate_temperature_matrix(
-            cloud_cover=self.view.slider.get()/100
-            )
+                                  cloud_cover=self.view.slider.get() / 100
+                                  )
         print(input_value_overwritten)
         my_plot = cp.Plot(input_value_overwritten)
         print(input_value)
