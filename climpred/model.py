@@ -1,3 +1,4 @@
+import climpred as cp
 
 
 class Model():
@@ -5,7 +6,6 @@ class Model():
     """
 
     def __init__(self):
-
-        self.previous_value = ''
-        self.value = ''
-        self.operator = ''
+        plot_obj = cp.Plot([1, 2, 3])
+        self.plot = plot_obj.plot
+        self.value = 1
