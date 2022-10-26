@@ -28,9 +28,7 @@ jobs:
         python -m pip install --upgrade pip setuptools wheel
         python -m pip install flake8
         pip install .
-        echo "import matplotlib" > tk_fix.py
-        echo "matplotlib.use('TkAgg')" >> tk_fix.py
-        python tk_fix.py
+        export MPLBACKEND=TKAgg
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
