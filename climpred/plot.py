@@ -1,4 +1,3 @@
-# import climpred as cp
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -22,7 +21,8 @@ class Plot():
         plt.plot(T, heights)
 
         # Plot parameters
-        plt.yticks(ticks=[0, 1, 2], labels=['surface', 'lower level', 'upper level'])
+        plt.yticks(ticks=[0, 1, 2], labels=['surface', 'lower level',
+                                            'upper level'])
         # plt.yticklabel(['surface', 'lower level', 'upper level'])
         plt.xlim(-100, 100)
         plt.ylabel('Height')
