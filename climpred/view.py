@@ -1,15 +1,12 @@
 import climpred as cp
 import tkinter as tk
 from tkinter import BOTH, E, HORIZONTAL, LEFT, RIGHT, W, Scale, ttk
-import numpy as np
 import matplotlib
-from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import (
     FigureCanvasTkAgg,
 )
 import matplotlib.pyplot as plt
 matplotlib.use('TkAgg')
-
 
 
 class View(tk.Tk):
@@ -26,13 +23,13 @@ class View(tk.Tk):
         self.title('Climate Modelling')
 
         self._make_main_frame()
-        
+
         self._make_control_frame()
-        
+
         self._make_graph_frame()
 
         self._initiate_graph()
-        
+
         self._make_slider()
 
         self._center_window()
@@ -77,6 +74,8 @@ class View(tk.Tk):
         )
 
     def _make_slider(self):
-        self.slider = Scale(self.control_frame, from_=0, to=200, orient=HORIZONTAL, command=self.controller._on_slider_slide)
+        self.slider = Scale(self.control_frame, from_=0, to=200,
+                            orient=HORIZONTAL,
+                            command=self.controller._on_slider_slide)
         self.slider.set(0)
         self.slider.pack()
