@@ -53,9 +53,9 @@ class View(tk.Tk):
         self.graph_frame.pack(expand=True, fill=BOTH, side=RIGHT, anchor=E)
 
     def _initiate_graph(self):
-        my_dummy_plot = cp.Plot(0)
+        my_dummy_plot = cp.Plot([0, 0, 0])
         self._make_graph(my_dummy_plot)
-    
+
     def _make_graph(self, plot_obj: object):
         plt.close('all')
         for widgets in self.graph_frame.winfo_children():
