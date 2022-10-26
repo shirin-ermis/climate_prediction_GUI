@@ -1,5 +1,5 @@
+import climpred as cp
 import numpy as np
-from climpred.albedo import get_albedo
 
 # Stefan-Boltzmann constant (W/m^(-2)K^(-4))
 sigma = 5.67e-8
@@ -44,7 +44,7 @@ def calculate_temperature_matrix(
 
     '''
 
-    albedo = get_albedo(cloud_cover)
+    albedo = cp.get_albedo(cloud_cover)
 
     epsilon_matrix = np.array([[-1, epsilon_1, (1 - epsilon_1) * epsilon_2],
                                [epsilon_1, -2 * epsilon_1,
