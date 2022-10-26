@@ -77,7 +77,8 @@ class View(tk.Tk):
         )
 
     def _make_slider(self):
-        self.slider = tk.Scale(self.control_frame, from_=0, to=200,
+
+        self.slider = tk.Scale(self.control_frame, from_=0, to=100,
                                orient=tk.HORIZONTAL, length=250)
         self.slider.set(0)
         self.slider.grid(row=1)
