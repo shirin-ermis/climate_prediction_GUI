@@ -1,5 +1,4 @@
 import unittest
-import numpy as np
 import climpred as cp
 
 # Stefan-Boltzmann constant (W/m^(-2)K^(-4))
@@ -14,7 +13,7 @@ class TestTemperatureVector(unittest.TestCase):
 
     def test_temp_range(self):
         for temp in range(3):
-            assert (200 <= cp.calculate_temperature_matrix()[temp] <= 400), \
+            assert (-1000 <= cp.calculate_temperature_matrix()[temp] <= 100), \
                 "Temperature out of range"
 
 
