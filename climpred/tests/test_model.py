@@ -5,6 +5,7 @@ class ModelTest(unittest.TestCase):
     """
     Tests the :class:`Model` class.
     """
+    
     def test_create(self):
         """
         Tests Model creation.
@@ -12,6 +13,7 @@ class ModelTest(unittest.TestCase):
         model = cp.Model()
         self.assertEqual(model.value, 1)
         self.assertEqual(type(model.plot), type(plt.figure()))
+
 
 if __name__ == "__main__":
     unittest.main()

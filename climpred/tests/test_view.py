@@ -2,7 +2,6 @@
 # test_view.py
 #
 import unittest
-from unittest.mock import patch
 import tkinter.ttk as ttk
 import climpred as cp
 
@@ -10,6 +9,7 @@ class ViewTest(unittest.TestCase):
     """
     Tests the :class:`View` class.
     """
+
 
     # set global variables for testing
     global ctrl, view
@@ -36,7 +36,7 @@ class ViewTest(unittest.TestCase):
         self.assertEqual(mf_info['columnspan'], '1')
         self.assertEqual(mf_info['rowspan'], '1')
         self.assertEqual(mf_info['sticky'], 'nesw')
-        
+
     def test_make_control_frame(self):
         isinstance(view.control_frame, type(ttk.Frame()))
         cf_info = view.control_frame.info()
@@ -92,6 +92,7 @@ class ViewTest(unittest.TestCase):
         view._make_calculate_button
         view.btn.invoke()
         self.assertEqual(view.btn['text'], "Calculate model")
+
 
 if __name__ == "__main__":
     unittest.main()
