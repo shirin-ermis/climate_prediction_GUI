@@ -26,8 +26,10 @@ jobs:
         python -m pip install coverage codecov
         pip install .
     - name: Run coverage
-      run: |
-        coverage run -m unittest
+      uses: GabrielBB/xvfb-action@v1
+      with:
+        run: |
+          coverage run -m unittest
     - name: Run codecov
       if: success()
       env:
