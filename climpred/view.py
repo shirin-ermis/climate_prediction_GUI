@@ -1,6 +1,6 @@
+from tkinter import ttk
 import climpred as cp
 import tkinter as tk
-from tkinter import BOTH, E, HORIZONTAL, LEFT, RIGHT, W, Scale, ttk
 import matplotlib
 from matplotlib.backends.backend_tkagg import (
     FigureCanvasTkAgg,
@@ -33,6 +33,8 @@ class View(tk.Tk):
 
         self._make_slider()
 
+        self._make_calculate_button()
+
         self._center_window()
 
     def main(self):
@@ -44,7 +46,7 @@ class View(tk.Tk):
 
     def _make_control_frame(self):
         self.control_frame = ttk.Frame(self.main_frm)
-        self.control_frame.grid(column=0,sticky="nsw")
+        self.control_frame.grid(column=0, sticky="nsw")
 
     def _make_graph_frame(self):
         self.graph_frame = ttk.Frame(self.main_frm)
@@ -75,8 +77,17 @@ class View(tk.Tk):
         )
 
     def _make_slider(self):
-        self.slider = Scale(self.control_frame, from_=0, to=200,
-                            orient=HORIZONTAL, length=250,
-                            command=self.controller._on_slider_slide)
+
+        self.slider = tk.Scale(self.control_frame, from_=0, to=100,
+                               orient=tk.HORIZONTAL, length=250)
         self.slider.set(0)
-        self.slider.grid(row=0)
+        self.slider.grid(row=1)
+
+    def _make_Cloud_Cover_Label(self):
+        self._Cloud_Cover_Label = tk.Label(self.control_frame,
+                                           text="Cloud Cover as %")
+
+    def _make_calculate_button(self):
+        self.btn = tk.Button(self.control_frame, text="Calculate model",
+                             command=self.controller._on_press_calculate_button) # noqa
+        self.btn.grid(row=0)
