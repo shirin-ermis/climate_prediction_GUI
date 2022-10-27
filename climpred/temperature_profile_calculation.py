@@ -1,24 +1,25 @@
+import climpred as cp
 import numpy as np
-
-albedo = 0.3
-epsilon_1 = 0.5
-epsilon_2 = 0.5
-H_S = 50
-H_L = 50
-S_0 = 1367
 
 # Stefan-Boltzmann constant (W/m^(-2)K^(-4))
 sigma = 5.67e-8
 
 
-def calculate_temperature_matrix():
+def calculate_temperature_matrix(
+    cloud_cover: float = 0.35,
+    epsilon_1: float = 0.5,
+    epsilon_2: float = 0.5,
+    H_S: float = 50.,
+    H_L: float = 50.,
+    S_0: float = 1367.
+):
     '''
     Takes atmospheric parameters and returns a three-point temperature profile.
 
     Parameters
     ----------
-    albedo: float
-    Planetary albedo (dimensionless)
+    cloud_cover: float
+    Fraction of globe covered by clouds (dimensionless)
 
     epsilon_1: float
     Emissitivity/absorptivity for layer 1 (dimensionless)
@@ -35,20 +36,15 @@ def calculate_temperature_matrix():
     S_0: float
     Solar constant (W/m^(-2))
 
-    Return
+    Returns
     ----------
-    temperature_matrix: array
+    temperature_matrix: np.ndarray
     An array of three points for the temperature profile: T_surface,
-    T_level1, T_level2 (K)
+    T_level1, T_level2 (°C)
 
     '''
 
-    albedo = 0.3
-    epsilon_1 = 0.5
-    epsilon_2 = 0.5
-    H_S = 50
-    H_L = 50
-    S_0 = 1367
+    albedo = cp.get_albedo(cloud_cover)
 
     epsilon_matrix = np.array([[-1, epsilon_1, (1 - epsilon_1) * epsilon_2],
                                [epsilon_1, -2 * epsilon_1,
