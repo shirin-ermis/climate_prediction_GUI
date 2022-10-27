@@ -27,9 +27,6 @@ jobs:
         pip install .
     - name: Run coverage
       run: |
-        DISPLAY=$(cat /etc/resolv.conf | awk 'FNR==4 {print $2}')
-        DISPLAY+=":0.0"
-        export DISPLAY
         coverage run -m unittest
     - name: Run codecov
       if: success()
