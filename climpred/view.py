@@ -71,7 +71,8 @@ class View(tk.Tk):
         for widgets in self.graph_frame.winfo_children():
             widgets.destroy()
         figure_canvas = FigureCanvasTkAgg(plot_obj.plot, self.graph_frame)
-        figure_canvas.get_tk_widget().grid(row=0, ipadx=150, ipady=100, sticky="ns")
+        figure_canvas.get_tk_widget().grid(row=0, ipadx=150, ipady=100,
+                                           sticky="ns")
 
     def _center_window(self):
         self.update()
@@ -87,9 +88,11 @@ class View(tk.Tk):
         )
 
     def _make_cloud_cover_slider(self):
-
-        self.cloud_cover_slider = tk.Scale(self.control_frame, from_=0, to=1,
-                               orient=tk.HORIZONTAL, length=250, label="Cloud Cover", resolution=0.01)
+        self.cloud_cover_slider = tk.Scale(
+            self.control_frame, from_=0, to=1,
+            orient=tk.HORIZONTAL, length=250,
+            label="Cloud Cover", resolution=0.01
+        )
         self.cloud_cover_slider.set(0)
         self.cloud_cover_slider.grid(row=1)
 
@@ -99,33 +102,46 @@ class View(tk.Tk):
         self.btn.grid(row=0)
 
     def _make_epsilon_1_slider(self):
-        self.epsilon_1_slider = tk.Scale(self.control_frame, from_=0.01, to=1,
-                               orient=tk.HORIZONTAL, length=250, label="Emissivity for lower layer", resolution=0.01)
+        self.epsilon_1_slider = tk.Scale(
+            self.control_frame, from_=0.01, to=1,
+            orient=tk.HORIZONTAL, length=250,
+            label="Emissivity for lower layer", resolution=0.01
+        )
         self.epsilon_1_slider.set(0.01)
         self.epsilon_1_slider.grid(row=2)
 
     def _make_epsilon_2_slider(self):
-        self.epsilon_2_slider = tk.Scale(self.control_frame, from_=0.01, to=1,
-                               orient=tk.HORIZONTAL, length=250, label="Emissivity for upper layer", resolution=0.01)
+        self.epsilon_2_slider = tk.Scale(
+            self.control_frame, from_=0.01, to=1,
+            orient=tk.HORIZONTAL, length=250,
+            label="Emissivity for upper layer", resolution=0.01
+        )
         self.epsilon_2_slider.set(0.01)
         self.epsilon_2_slider.grid(row=3)
 
     def _make_S_0_slider(self):
-        self.S_0_slider = tk.Scale(self.control_frame, from_=10, to=2000,
-                               orient=tk.HORIZONTAL, length=250, label="Solar Constant (W/m^(-2))", resolution=10)
+        self.S_0_slider = tk.Scale(
+            self.control_frame, from_=10, to=2000,
+            orient=tk.HORIZONTAL, length=250,
+            label="Solar Constant (W/m^(-2))", resolution=10
+        )
         self.S_0_slider.set(10)
         self.S_0_slider.grid(row=6)
 
     def _make_H_S_slider(self):
-        self.H_S_slider = tk.Scale(self.control_frame, from_=0, to=200,
-                               orient=tk.HORIZONTAL, length=250, label="Convective flux for upper layer (W/m^(-2))",
-                               resolution=10)
+        self.H_S_slider = tk.Scale(
+            self.control_frame, from_=0, to=200,
+            orient=tk.HORIZONTAL, length=250,
+            label="Convective flux for upper layer (W/m^(-2))", resolution=10
+        )
         self.H_S_slider.set(0)
         self.H_S_slider.grid(row=4)
 
     def _make_H_L_slider(self):
-        self.H_L_slider = tk.Scale(self.control_frame, from_=0, to=200,
-                               orient=tk.HORIZONTAL, length=250, label="Convective flux for lower layer (W/m(-2))",
-                               resolution=10)
+        self.H_L_slider = tk.Scale(
+            self.control_frame, from_=0, to=200,
+            orient=tk.HORIZONTAL, length=250,
+            label="Convective flux for lower layer (W/m(-2))", resolution=10
+        )
         self.H_L_slider.set(0)
         self.H_L_slider.grid(row=5)
