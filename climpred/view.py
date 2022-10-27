@@ -61,7 +61,7 @@ class View(tk.Tk):
         for widgets in self.graph_frame.winfo_children():
             widgets.destroy()
         figure_canvas = FigureCanvasTkAgg(plot_obj.plot, self.graph_frame)
-        figure_canvas.get_tk_widget().grid(row=0, sticky="nsew")
+        figure_canvas.get_tk_widget().grid(row=0, ipadx=150, ipady=100, sticky="ns")
 
     def _center_window(self):
         self.update()
