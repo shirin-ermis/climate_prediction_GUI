@@ -5,11 +5,11 @@ import unittest
 import tkinter.ttk as ttk
 import climpred as cp
 
+
 class ViewTest(unittest.TestCase):
     """
     Tests the :class:`View` class.
     """
-
 
     # set global variables for testing
     global ctrl, view
@@ -71,11 +71,10 @@ class ViewTest(unittest.TestCase):
         self.assertEqual(graph_info['ipady'], 100)
         self.assertEqual(graph_info['sticky'], 'ns')
 
-
     def test_center_window(self):
         view.geometry("800x600")
         view._center_window()
-        
+
         dimensions = '800x600'
         new_geometry = view.geometry().split('+')
         self.assertEqual(new_geometry[0], dimensions)

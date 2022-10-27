@@ -1,6 +1,7 @@
 import unittest
 import climpred as cp
 
+
 class AlbedoTest(unittest.TestCase):
 
 
