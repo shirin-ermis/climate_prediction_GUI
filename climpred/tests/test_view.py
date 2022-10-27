@@ -39,7 +39,7 @@ class ViewTest(unittest.TestCase):
 
     def test_make_control_frame(self):
         isinstance(view.control_frame, type(ttk.Frame()))
-        cf_info = view.control_frame.info()
+        cf_info = view.control_frame.grid_info()
 
         self.assertEqual(cf_info['column'], '0')
         self.assertEqual(cf_info['row'], '0')
@@ -49,7 +49,7 @@ class ViewTest(unittest.TestCase):
 
     def test_make_graph_frame(self):
         isinstance(view.graph_frame, type(ttk.Frame()))
-        gf_info = view.graph_frame.info()
+        gf_info = view.graph_frame.grid_info()
 
         self.assertEqual(gf_info['column'], '1')
         self.assertEqual(gf_info['row'], '1')
