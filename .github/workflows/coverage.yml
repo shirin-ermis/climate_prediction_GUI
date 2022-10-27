@@ -27,6 +27,7 @@ jobs:
         pip install .
     - name: Run coverage
       run: |
+        DISPLAY=0.0
         coverage run -m unittest
     - name: Run codecov
       if: success()
