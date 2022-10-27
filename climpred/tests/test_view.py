@@ -22,11 +22,6 @@ class ViewTest(unittest.TestCase):
         self.assertEqual(view.controller, ctrl)
         self.assertEqual(view.title(), 'Climate Modelling')
 
-    # def test_main(self):
-    #     view.main()
-    #     view.mainloop.__glo
-    #     view.main.
-
     def test_make_main_frame(self):
         isinstance(view.main_frm, type(ttk.Frame()))
         mf_info = view.main_frm.grid_info()
