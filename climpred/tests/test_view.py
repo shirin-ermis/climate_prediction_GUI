@@ -74,8 +74,10 @@ class ViewTest(unittest.TestCase):
     def test_center_window(self):
         view.geometry("800x600")
         view._center_window()
-        dimensions = '800x600+320+150'
-        self.assertEqual(view.geometry(), dimensions)
+        
+        dimensions = '800x600'
+        new_geometry = view.geometry().split('+')
+        self.assertEqual(new_geometry[0], dimensions)
 
     def test_make_slider(self):
         view._make_slider()
