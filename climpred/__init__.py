@@ -14,4 +14,4 @@ from .controller import Controller  # noqa
 from .view import View  # noqa
 from .plot import Plot # noqa
 from .albedo import get_albedo  # noqa
-from .temperature_profile_calculation import calculate_temperature_matrix # noqa
+from .temperature_profile_calculation_general import calculate_temperature_matrix # noqa

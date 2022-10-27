@@ -51,11 +51,11 @@ def calculate_temperature_matrix(
                                epsilon_1 * epsilon_2],
                                [(1 - epsilon_1) * epsilon_2,
                                epsilon_1 * epsilon_2, -2 * epsilon_2]])
-
+    print("A",epsilon_matrix)
     rhs_vector = (1 / sigma) * np.array([(H_S - (S_0 / 4) * (1 - albedo)),
                                         H_L - H_S,
                                         (-1 * H_L)])
-
+    print("B",rhs_vector)
     epsilon_inverse_matrix = np.linalg.inv(epsilon_matrix)
 
     temperature_matrix = (np.dot(epsilon_inverse_matrix, rhs_vector))**0.25
