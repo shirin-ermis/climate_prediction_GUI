@@ -24,9 +24,9 @@ class TestTemperatureVector(unittest.TestCase):
         e1 = 1
         e2 = 0.1
         # coefficient matrix  for parameters below
-        a = np.array([[-1, e1, (1-e1) * e2],
+        a = np.array([[-1, e1, (1 - e1) * e2],
                       [e1, -2 * e1, e1 * e2],
-                      [(1-e1) * e2, e1 * e2, -2 * e2]])
+                      [(1 - e1) * e2, e1 * e2, -2 * e2]])
         b = np.array([1, 0, 0]) * (-0.94 * solar) / (4 * sigma)  # rhs
         npt.assert_array_almost_equal(
             cp.calculate_temperature_matrix(cloud_cover=0,
