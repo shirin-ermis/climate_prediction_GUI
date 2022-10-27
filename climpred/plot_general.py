@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-class Plot():
+class Plot_general():
     """
     Class to create plots for the model that displays the temperatures
     in the atmospheric layers
@@ -14,7 +14,7 @@ class Plot():
 
     def create_plot(self, T):
         # Data
-        heights = np.array([0, 1, 2])
+        heights = np.array(range(len(T)))
 
         # Plotting
         self.plot = plt.figure()
@@ -22,8 +22,10 @@ class Plot():
         plt.title('Atmospheric temperature profile')
 
         # Plot parameters
-        plt.yticks(ticks=[0, 1, 2], labels=['surface', 'lower level',
-                                            'upper level'])
+        height_ticks = range(len(T))
+        height_labels = [str(x) for x in range(1, len(T))]
+        height_labels.insert(0, 'Surface')
+        plt.yticks(ticks=height_ticks, labels=height_labels)
         # plt.yticklabel(['surface', 'lower level', 'upper level'])
         plt.xlim(-100, 100)
         plt.ylabel('Height')

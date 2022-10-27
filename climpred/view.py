@@ -47,6 +47,8 @@ class View(tk.Tk):
 
         self._center_window()
 
+        self._make_advanced_button()
+
     def main(self):
         self.mainloop()
 
@@ -145,3 +147,77 @@ class View(tk.Tk):
         )
         self.H_L_slider.set(0)
         self.H_L_slider.grid(row=5)
+
+    def _make_advanced_button(self):
+        self.advanced_btn = tk.Button(self.control_frame, text="Advanced model",
+                             command=self.controller._on_press_advanced_button) # noqa
+        self.advanced_btn.grid(row=8)
+
+    def _create_advanced_window(self):
+        # Toplevel object which will
+        # be treated as a new window
+        self.advanced_Window = tk.Toplevel(self)
+
+        # sets the title of the
+        # Toplevel widget
+        self.advanced_Window.title("Advanced modeller")
+
+        # sets the geometry of toplevel
+        self.advanced_Window.geometry("255x350")
+
+        # Create advanced frame
+        self.advanced_frm = ttk.Frame(self.advanced_Window)
+        self.advanced_frm.grid(sticky="nsew")
+
+        # Create advanced cloud cover slider
+        self.advanced_cloud_cover_slider = tk.Scale(
+            self.advanced_frm, from_=0, to=1,
+            orient=tk.HORIZONTAL, length=250,
+            label="Cloud Cover", resolution=0.01
+        )
+        self.advanced_cloud_cover_slider.set(0)
+        self.advanced_cloud_cover_slider.grid(row=0)
+
+        # Create number of layers entry
+        self.layers = tk.StringVar()
+        self.advanced_layers_entry = tk.Entry(
+            self.advanced_frm,
+            justify='right',
+            textvariable=self.layers,
+        )
+        self.advanced_layers_entry.grid(row=2)
+        tk.Label(self.advanced_frm, text='Number of layers').grid(row=1)
+
+        # Create advanced epsilon entry
+        self.epsilon = tk.StringVar()
+        self.advanced_epsilon_entry = tk.Entry(
+            self.advanced_frm,
+            justify='right',
+            textvariable=self.epsilon,
+        )
+        self.advanced_epsilon_entry.grid(row=4)
+        tk.Label(self.advanced_frm, text='Emmisivity vector').grid(row=3)
+
+        # Create advanced H entry
+        self.H = tk.StringVar()
+        self.advanced_H_entry = tk.Entry(
+            self.advanced_frm,
+            justify='right',
+            textvariable=self.H,
+        )
+        self.advanced_H_entry.grid(row=6)
+        self.label = tk.Label(self.advanced_frm, text='Convective flux vector').grid(row=5)
+
+        # Create advanced Solcar constant slider
+        self.advanced_solar_constant_slider = tk.Scale(
+            self.advanced_frm, from_=10, to=2000,
+            orient=tk.HORIZONTAL, length=250,
+            label="Solar constant", resolution=0.01
+        )
+        self.advanced_solar_constant_slider.set(0)
+        self.advanced_solar_constant_slider.grid(row=7)
+
+        # Create advanced calculate button
+        self.advanced_calculate_btn = tk.Button(self.advanced_frm, text="Calculate model",
+                             command=self.controller._on_press_advanced_calculate_button) # noqa
+        self.advanced_calculate_btn.grid(row=8)

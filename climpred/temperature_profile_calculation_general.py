@@ -16,7 +16,7 @@ def product(i, j, epsilons):
 def create_matrix(N, epsilons):
     diag_elem = np.zeros((N+1, N+1))
     matrix = diag_elem.copy()
-
+    epsilons = np.insert(epsilons, 0, 1)
     for i in range(N+1):
         if i == 0:
             diag_elem[i, i] = -epsilons[0]
@@ -40,10 +40,10 @@ def create_RHS_vector(N, H, S_0, the_albedo):
     return vector
 
 
-def calculate_temperature_matrix(
+def calculate_temperature_matrix_general(
     layers: int = 2,
     cloud_cover: float = 0.35,
-    epsilons: np.ndarray = np.array([1, 0.5, 0.5]),
+    epsilons: np.ndarray = np.array([0.5, 0.5]),
     H: np.ndarray = np.array([50., 50.]),
     S_0: float = 1367.
 ):
