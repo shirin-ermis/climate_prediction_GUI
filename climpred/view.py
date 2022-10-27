@@ -141,7 +141,7 @@ class View(tk.Tk):
         self.H_L_slider = tk.Scale(
             self.control_frame, from_=0, to=200,
             orient=tk.HORIZONTAL, length=250,
-            label="Convective flux for lower layer (W/m(-2))", resolution=10
+            label="Convective flux for lower layer (W/m^(-2))", resolution=10
         )
         self.H_L_slider.set(0)
         self.H_L_slider.grid(row=5)
