@@ -36,6 +36,12 @@ def get_readme():
 setup(
     # Module name (lowercase)
     name='climpred',
+    entry_points={
+        'gui_scripts': [
+            'climpred = main:main',
+        ],
+    },
+
 
     # Version
     version='0.0.1',
