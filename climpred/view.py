@@ -118,12 +118,14 @@ class View(tk.Tk):
 
     def _make_H_S_slider(self):
         self.H_S_slider = tk.Scale(self.control_frame, from_=0, to=200,
-                               orient=tk.HORIZONTAL, length=250, label="Convective flux for upper layer (W/m^(-2))", resolution=10)
+                               orient=tk.HORIZONTAL, length=250, label="Convective flux for upper layer (W/m^(-2))",
+                               resolution=10)
         self.H_S_slider.set(0)
         self.H_S_slider.grid(row=4)
 
     def _make_H_L_slider(self):
         self.H_L_slider = tk.Scale(self.control_frame, from_=0, to=200,
-                               orient=tk.HORIZONTAL, length=250, label="Convective flux for lower layer (W/m(-2))", resolution=10)
+                               orient=tk.HORIZONTAL, length=250, label="Convective flux for lower layer (W/m(-2))",
+                               resolution=10)
         self.H_L_slider.set(0)
         self.H_L_slider.grid(row=5)
