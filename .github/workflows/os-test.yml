@@ -35,6 +35,6 @@ jobs:
         flake8 . --count --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with unittest
       uses: GabrielBB/xvfb-action@v1
-        with:
-          run: |
-            python -m unittest
+      with:
+        run: |
+          python -m unittest
