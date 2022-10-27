@@ -46,11 +46,11 @@ class View(tk.Tk):
 
     def _make_control_frame(self):
         self.control_frame = ttk.Frame(self.main_frm)
-        self.control_frame.grid(column=0, sticky="nsw")
+        self.control_frame.grid(column=0, row=0, sticky="ns")
 
     def _make_graph_frame(self):
         self.graph_frame = ttk.Frame(self.main_frm)
-        self.graph_frame.grid(column=1, sticky="nse")
+        self.graph_frame.grid(column=1, row=0, sticky="ns")
 
     def _initiate_graph(self):
         my_dummy_plot = cp.Plot([0, 0, 0])
@@ -61,7 +61,7 @@ class View(tk.Tk):
         for widgets in self.graph_frame.winfo_children():
             widgets.destroy()
         figure_canvas = FigureCanvasTkAgg(plot_obj.plot, self.graph_frame)
-        figure_canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+        figure_canvas.get_tk_widget().grid(row=0, sticky="nsew")
 
     def _center_window(self):
         self.update()
