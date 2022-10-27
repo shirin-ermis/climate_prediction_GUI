@@ -31,31 +31,31 @@ class ViewTest(unittest.TestCase):
         isinstance(view.main_frm, type(ttk.Frame()))
         mf_info = view.main_frm.grid_info()
 
-        self.assertEqual(mf_info['column'], '0')
-        self.assertEqual(mf_info['row'], '0')
-        self.assertEqual(mf_info['columnspan'], '1')
-        self.assertEqual(mf_info['rowspan'], '1')
+        self.assertEqual(mf_info['column'], 0)
+        self.assertEqual(mf_info['row'], 0)
+        self.assertEqual(mf_info['columnspan'], 1)
+        self.assertEqual(mf_info['rowspan'], 1)
         self.assertEqual(mf_info['sticky'], 'nesw')
 
     def test_make_control_frame(self):
         isinstance(view.control_frame, type(ttk.Frame()))
         cf_info = view.control_frame.grid_info()
 
-        self.assertEqual(cf_info['column'], '0')
-        self.assertEqual(cf_info['row'], '0')
-        self.assertEqual(cf_info['columnspan'], '1')
-        self.assertEqual(cf_info['rowspan'], '1')
-        self.assertEqual(cf_info['sticky'], 'nsw')
+        self.assertEqual(cf_info['column'], 0)
+        self.assertEqual(cf_info['row'], 0)
+        self.assertEqual(cf_info['columnspan'], 1)
+        self.assertEqual(cf_info['rowspan'], 1)
+        self.assertEqual(cf_info['sticky'], 'ns')
 
     def test_make_graph_frame(self):
         isinstance(view.graph_frame, type(ttk.Frame()))
         gf_info = view.graph_frame.grid_info()
 
-        self.assertEqual(gf_info['column'], '1')
-        self.assertEqual(gf_info['row'], '1')
-        self.assertEqual(gf_info['columnspan'], '1')
-        self.assertEqual(gf_info['rowspan'], '1')
-        self.assertEqual(gf_info['sticky'], 'nes')
+        self.assertEqual(gf_info['column'], 1)
+        self.assertEqual(gf_info['row'], 0)
+        self.assertEqual(gf_info['columnspan'], 1)
+        self.assertEqual(gf_info['rowspan'], 1)
+        self.assertEqual(gf_info['sticky'], 'ns')
 
     def test_initiate_graph(self):
         # self.assertTrue(plt.fignum_exists(my_dummy_plot))
@@ -64,12 +64,14 @@ class ViewTest(unittest.TestCase):
         pass
 
     def test_make_graph(self):
-        graph_info = view.graph_frame.winfo_children()[0].info()
+        graph_info = view.graph_frame.winfo_children()[0].grid_info()
 
-        self.assertEqual(graph_info['expand'], '1')
-        self.assertEqual(graph_info['anchor'], 'center')
-        self.assertEqual(graph_info['fill'], 'both')
-        self.assertEqual(graph_info['side'], 'top')
+        self.assertEqual(graph_info['column'], 0)
+        self.assertEqual(graph_info['row'], 0)
+        self.assertEqual(graph_info['columnspan'], 1)
+        self.assertEqual(graph_info['rowspan'], 1)
+        self.assertEqual(graph_info['sticky'], 'nesw')
+
 
     def test_center_window(self):
         view.geometry("800x600")
