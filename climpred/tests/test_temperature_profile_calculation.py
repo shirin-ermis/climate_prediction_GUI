@@ -24,10 +24,10 @@ class TestTemperatureVector(unittest.TestCase):
         e1 = 1
         e2 = 0.1
         # coefficient matrix  for parameters below
-        a = np.array([[-1, e1, (1-e1)*e2],
-                      [e1, -2*e1, e1*e2],
-                      [(1-e1)*e2, e1*e2, -2*e2]])
-        b = np.array([1, 0, 0]) * (-0.94*solar)/(4*sigma)  # rhs
+        a = np.array([[-1, e1, (1-e1) * e2],
+                      [e1, -2 * e1, e1 * e2],
+                      [(1-e1) * e2, e1 * e2, -2 * e2]])
+        b = np.array([1, 0, 0]) * (-0.94 * solar) / (4 * sigma)  # rhs
         npt.assert_array_almost_equal(
             cp.calculate_temperature_matrix(cloud_cover=0,
                                             epsilon_1=e1,
@@ -35,7 +35,7 @@ class TestTemperatureVector(unittest.TestCase):
                                             H_S=0,
                                             H_L=0,
                                             S_0=solar),
-            np.around((np.linalg.solve(a, b)**0.25)-273.15, 2))
+            np.around((np.linalg.solve(a, b)**0.25) - 273.15, 2))
 
 
 if __name__ == '__main__':
