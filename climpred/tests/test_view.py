@@ -68,7 +68,7 @@ class ViewTest(unittest.TestCase):
 
         self.assertEqual(graph_info['row'], 0)
         self.assertEqual(graph_info['ipadx'], 150)
-        self.assertEqual(graph_info['ipady'], 150)
+        self.assertEqual(graph_info['ipady'], 100)
         self.assertEqual(graph_info['sticky'], 'ns')
 
 
