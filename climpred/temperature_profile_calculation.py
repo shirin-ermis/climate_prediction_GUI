@@ -40,7 +40,7 @@ def calculate_temperature_matrix(
     ----------
     temperature_matrix: np.ndarray
     An array of three points for the temperature profile: T_surface,
-    T_level1, T_level2 (K)
+    T_level1, T_level2 (°C)
 
     '''
 
