@@ -31,7 +31,7 @@ class View(tk.Tk):
 
         self._initiate_graph()
 
-        self._make_slider()
+        self._make_cloud_cover_slider()
 
         self._make_calculate_button()
 
@@ -75,18 +75,14 @@ class View(tk.Tk):
         self.geometry(
             f'{width}x{height}+{x_offset}+{y_offset}'
         )
-
-    def _make_slider(self):
+    
+    def _make_cloud_cover_slider(self):
 
         self.slider = tk.Scale(self.control_frame, from_=0, to=100,
-                               orient=tk.HORIZONTAL, length=250)
+                               orient=tk.HORIZONTAL, length=250, label="Cloud Cover as %")
         self.slider.set(0)
         self.slider.grid(row=1)
-
-    def _make_Cloud_Cover_Label(self):
-        self._Cloud_Cover_Label = tk.Label(self.control_frame,
-                                           text="Cloud Cover as %")
-
+    
     def _make_calculate_button(self):
         self.btn = tk.Button(self.control_frame, text="Calculate model",
                              command=self.controller._on_press_calculate_button) # noqa
