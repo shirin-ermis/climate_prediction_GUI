@@ -31,7 +31,7 @@ class View(tk.Tk):
 
         self._initiate_graph()
 
-        self._make_slider()
+        self._make_cloud_cover_slider()
 
         self._make_calculate_button()
 
@@ -61,7 +61,7 @@ class View(tk.Tk):
         for widgets in self.graph_frame.winfo_children():
             widgets.destroy()
         figure_canvas = FigureCanvasTkAgg(plot_obj.plot, self.graph_frame)
-        figure_canvas.get_tk_widget().grid(row=0, sticky="nsew")
+        figure_canvas.get_tk_widget().grid(row=0, ipadx=150, ipady=100, sticky="ns")
 
     def _center_window(self):
         self.update()
@@ -76,16 +76,12 @@ class View(tk.Tk):
             f'{width}x{height}+{x_offset}+{y_offset}'
         )
 
-    def _make_slider(self):
+    def _make_cloud_cover_slider(self):
 
         self.slider = tk.Scale(self.control_frame, from_=0, to=100,
-                               orient=tk.HORIZONTAL, length=250)
+                               orient=tk.HORIZONTAL, length=250, label="Cloud Cover as %")
         self.slider.set(0)
         self.slider.grid(row=1)
-
-    def _make_Cloud_Cover_Label(self):
-        self._Cloud_Cover_Label = tk.Label(self.control_frame,
-                                           text="Cloud Cover as %")
 
     def _make_calculate_button(self):
         self.btn = tk.Button(self.control_frame, text="Calculate model",
