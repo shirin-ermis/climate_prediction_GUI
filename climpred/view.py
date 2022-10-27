@@ -33,6 +33,16 @@ class View(tk.Tk):
 
         self._make_cloud_cover_slider()
 
+        self._make_epsilon_1_slider()
+
+        self._make_epsilon_2_slider()
+
+        self._make_S_0_slider()
+
+        self._make_H_S_slider()
+
+        self._make_H_L_slider()
+
         self._make_calculate_button()
 
         self._center_window()
@@ -78,8 +88,8 @@ class View(tk.Tk):
 
     def _make_cloud_cover_slider(self):
 
-        self.slider = tk.Scale(self.control_frame, from_=0, to=100,
-                               orient=tk.HORIZONTAL, length=250, label="Cloud Cover as %")
+        self.slider = tk.Scale(self.control_frame, from_=0, to=1,
+                               orient=tk.HORIZONTAL, length=250, label="Cloud Cover", resolution=0.01)
         self.slider.set(0)
         self.slider.grid(row=1)
 
@@ -87,3 +97,33 @@ class View(tk.Tk):
         self.btn = tk.Button(self.control_frame, text="Calculate model",
                              command=self.controller._on_press_calculate_button) # noqa
         self.btn.grid(row=0)
+
+    def _make_epsilon_1_slider(self):
+        self.slider = tk.Scale(self.control_frame, from_=0.01, to=1,
+                               orient=tk.HORIZONTAL, length=250, label="Emissivity for lower layer", resolution=0.01)
+        self.slider.set(0.01)
+        self.slider.grid(row=2)
+
+    def _make_epsilon_2_slider(self):
+        self.slider = tk.Scale(self.control_frame, from_=0.01, to=1,
+                               orient=tk.HORIZONTAL, length=250, label="Emissivity for upper layer", resolution=0.01)
+        self.slider.set(0.01)
+        self.slider.grid(row=3)
+
+    def _make_S_0_slider(self):
+        self.slider = tk.Scale(self.control_frame, from_=10, to=2000,
+                               orient=tk.HORIZONTAL, length=250, label="Solar Constant (W/m^(-2))", resolution=10)
+        self.slider.set(10)
+        self.slider.grid(row=4)
+    
+    def _make_H_S_slider(self):
+        self.slider = tk.Scale(self.control_frame, from_=0, to=200,
+                               orient=tk.HORIZONTAL, length=250, label="Convective flux for upper layer (W/m^(-2))", resolution=10)
+        self.slider.set(0)
+        self.slider.grid(row=5)
+    
+    def _make_H_L_slider(self):
+        self.slider = tk.Scale(self.control_frame, from_=0, to=200,
+                               orient=tk.HORIZONTAL, length=250, label="Convective flux for lower layer (W/m(-2))", resolution=10)
+        self.slider.set(0)
+        self.slider.grid(row=6)
