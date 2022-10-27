@@ -19,6 +19,7 @@ class Plot():
         # Plotting
         self.plot = plt.figure()
         plt.plot(T, heights)
+        plt.title('Atmospheric temperature profile')
 
         # Plot parameters
         plt.yticks(ticks=[0, 1, 2], labels=['surface', 'lower level',
