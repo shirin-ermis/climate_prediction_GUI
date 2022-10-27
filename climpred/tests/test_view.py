@@ -66,11 +66,10 @@ class ViewTest(unittest.TestCase):
     def test_make_graph(self):
         graph_info = view.graph_frame.winfo_children()[0].grid_info()
 
-        self.assertEqual(graph_info['column'], 0)
         self.assertEqual(graph_info['row'], 0)
-        self.assertEqual(graph_info['columnspan'], 1)
-        self.assertEqual(graph_info['rowspan'], 1)
-        self.assertEqual(graph_info['sticky'], 'nesw')
+        self.assertEqual(graph_info['ipadx'], 150)
+        self.assertEqual(graph_info['ipady'], 150)
+        self.assertEqual(graph_info['sticky'], 'ns')
 
 
     def test_center_window(self):
@@ -81,16 +80,13 @@ class ViewTest(unittest.TestCase):
         new_geometry = view.geometry().split('+')
         self.assertEqual(new_geometry[0], dimensions)
 
-    def test_make_slider(self):
-        view._make_slider()
+    def test_make_cloud_cover_slider(self):
+        view._make_cloud_cover_slider()
         self.assertEqual(view.slider.get(), 0)
         self.assertEqual(view.slider['orient'], 'horizontal')
         self.assertEqual(view.slider['from'], 0.0)
         self.assertEqual(view.slider['to'], 100.0)
-
-    def test_make_Cloud_Cover_Label(self):
-        view._make_Cloud_Cover_label()
-        self.assertEqual(view._Cloud_Cover_Label['text'], "Cloud Cover as %")
+        self.assertEqual(view.slider['label'], "Cloud Cover as %")
 
     def test_make_calculate_button(self):
         view._make_calculate_button
