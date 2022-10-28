@@ -22,11 +22,10 @@ class Plot_general():
         plt.title('Atmospheric temperature profile')
 
         # Plot parameters
-        height_ticks = range(len(T))
-        height_labels = [str(x) for x in range(1, len(T))]
-        height_labels.insert(0, 'Surface')
-        plt.yticks(ticks=height_ticks, labels=height_labels)
-        # plt.yticklabel(['surface', 'lower level', 'upper level'])
+        self.height_ticks = range(len(T))
+        self.height_labels = [str(x) for x in range(1, len(T))]
+        self.height_labels.insert(0, 'Surface')
+        plt.yticks(ticks=self.height_ticks, labels=self.height_labels)
         plt.xlim(-100, 100)
         plt.ylabel('Height')
         plt.xlabel('Temperature / °C')

@@ -25,7 +25,6 @@ def create_matrix(N, epsilons):
 
         for j in range(i + 1, N + 1):
             matrix[i, j] = epsilons[i] * product(i, j, epsilons) * epsilons[j]
-    print(matrix + matrix.transpose() + diag_elem)
     return matrix + matrix.transpose() + diag_elem
 
 
@@ -36,7 +35,6 @@ def create_RHS_vector(N, H, S_0, the_albedo):
         vector[i] = H[i] - H[i - 1]
     vector[N] = -H[N - 1]
     vector = vector / sigma
-    print(vector)
     return vector
 
 
