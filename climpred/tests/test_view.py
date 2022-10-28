@@ -85,7 +85,7 @@ class ViewTest(unittest.TestCase):
     def test_make_calculate_button(self):
         view._make_calculate_button
         view.btn.invoke()
-        self.assertEqual(view.btn['text'], "Calculate model")
+        self.assertEqual(view.btn_calc['text'], "Calculate model")
 
 
 if __name__ == "__main__":

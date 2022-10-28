@@ -92,14 +92,14 @@ class View(tk.Tk):
         self.slider.grid(row=1)
 
     def _make_calculate_button(self):
-        self.btn = tk.Button(self.control_frame, text="Calculate model",
+        self.btn_calc = tk.Button(self.control_frame, text="Calculate model",
                              command=self.controller._on_press_calculate_button) # noqa
-        self.btn.grid(row=0)
+        self.btn_calc.grid(row=0)
 
     def _make_faq_button(self):
-        self.btn = tk.Button(self.control_frame, text="Model FAQ",
+        self.btn_faq = tk.Button(self.control_frame, text="Model FAQ",
                              command=self.controller._on_press_faq_button) # noqa
-        self.btn.grid(row=0, column=1)
+        self.btn_faq.grid(row=0, column=1)
 
     def _make_new_window(self):
         pass
