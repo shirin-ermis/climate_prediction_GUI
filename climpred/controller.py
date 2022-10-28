@@ -64,7 +64,7 @@ class Controller():
         )
         print(temperatures)
         # Check if model is within range
-        flag = cp._check_model_range(temperatures)
+        flag = cp._check_model_range(temperatures, type = 'RUN')
 
         my_plot = cp.Plot_general(temperatures)
         self.view._make_graph(my_plot)

@@ -4,6 +4,7 @@ import numpy as np
 
 def _check_inputs(layers, epsilons, H):
     # Check if inputs are empty
+
     if layers[0] == '':
         tk.messagebox.showerror("Empty", "Number of layers is empty")
         return 1
