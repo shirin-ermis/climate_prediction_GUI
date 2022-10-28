@@ -15,7 +15,7 @@ The package solves for the temperature of the surface and the two layers in the 
 <sub><sup>Sourced from https://biocycle.atmos.colostate.edu/shiny/2layer/</sup></sub>
 
 ## Installation
-Install the application by downloading the files below [in this folder][https://drive.google.com/drive/folders/1DkjomQMPI7DUnrPg7tUfyhE912gW94WZ] based on your operating system:  
+Install the application by downloading the files below [in this folder](https://drive.google.com/drive/folders/1DkjomQMPI7DUnrPg7tUfyhE912gW94WZ) based on your operating system:  
 - Mac OS X: `climateprediction.app`  
 - Windows: `climateprediction.exe`  
 - Linux: `climateprediction`
