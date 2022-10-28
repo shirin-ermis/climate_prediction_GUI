@@ -1,6 +1,6 @@
 import climpred as cp
 import tkinter as tk
-import markdown
+# import markdown
 from tkinter import ttk
 
 
@@ -38,7 +38,7 @@ class Controller():
         hscroll = ttk.Scrollbar(new_window, orient='horizontal')
         vscroll = ttk.Scrollbar(new_window, orient='vertical')
         canvas = tk.Canvas(new_window,
-                           scrollregion=(0, 0, 700, 600),
+                           scrollregion=(0, 0, 700, 800),
                            yscrollcommand=vscroll.set,
                            xscrollcommand=hscroll.set)
         canvas.grid(column=0, row=0, sticky='nsew')
@@ -51,9 +51,10 @@ class Controller():
 
         # Add a text in Canvas
         file_text = open('FAQ.txt', 'r')
-        markdown_text = markdown.markdown(file_text.read())
-        canvas.create_text(0, 0,
-                           text=markdown_text,
+        raw_text = str(file_text.read())
+        # markdown_text = markdown.markdown(file_text.read())
+        canvas.create_text(10, 10,
+                           text=raw_text,
                            fill="black",
                            anchor='nw',
                            width=600)
