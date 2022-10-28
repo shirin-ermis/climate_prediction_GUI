@@ -7,35 +7,35 @@ sigma = 5.67e-8
 
 def product(i, j, epsilons):
     prod = 1
-    for k in range(i+1, j):
+    for k in range(i + 1, j):
         prod *= 1 - epsilons[k]
 
     return prod
 
 
 def create_matrix(N, epsilons):
-    diag_elem = np.zeros((N+1, N+1))
+    diag_elem = np.zeros((N + 1, N + 1))
     matrix = diag_elem.copy()
     epsilons = np.insert(epsilons, 0, 1)
-    for i in range(N+1):
+    for i in range(N + 1):
         if i == 0:
             diag_elem[i, i] = -epsilons[0]
         else:
-            diag_elem[i, i] = -2*epsilons[i]
+            diag_elem[i, i] = -2 * epsilons[i]
 
         for j in range(i+1, N+1):
-            matrix[i, j] = epsilons[i] * product(i, j, epsilons)*epsilons[j]
+            matrix[i, j] = epsilons[i] * product(i, j, epsilons) * epsilons[j]
     print(matrix + matrix.transpose() + diag_elem)
     return matrix + matrix.transpose() + diag_elem
 
 
 def create_RHS_vector(N, H, S_0, the_albedo):
-    vector = np.zeros(N+1)
-    vector[0] = H[0] - S_0*(1 - the_albedo)/4
+    vector = np.zeros(N + 1)
+    vector[0] = H[0] - S_0 * (1 - the_albedo)/4
     for i in range(1, N):
-        vector[i] = H[i] - H[i-1]
-    vector[N] = -H[N-1]
-    vector = vector/sigma
+        vector[i] = H[i] - H[i - 1]
+    vector[N] = -H[N - 1]
+    vector = vector / sigma
     print(vector)
     return vector
 
