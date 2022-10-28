@@ -24,14 +24,6 @@ def get_version():
     return version
 
 
-def get_readme():
-    """
-    Load README.md text for use as description.
-    """
-    with open('README.md') as f:
-        return f.read()
-
-
 # Go!
 setup(
     # Module name (lowercase)
@@ -42,8 +34,6 @@ setup(
 
     description='A python library for calculating temperatures in a 2-layer \
         atmospheric model.',
-
-    long_description=get_readme(),
 
     license='MIT license',
 
