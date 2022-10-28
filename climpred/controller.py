@@ -4,7 +4,6 @@ import tkinter as tk
 from tkinter import ttk
 
 
-
 class Controller():
     """
     Main controller
