@@ -211,7 +211,7 @@ class ViewTest(unittest.TestCase):
         view._create_advanced_window()
 
         view.advanced_calculate_btn.invoke()
-        self.assertEqual(view.btn['text'], "Calculate model")
+        self.assertEqual(view.advanced_calculate_btn['text'], "Calculate model")
 
 
 if __name__ == "__main__":
