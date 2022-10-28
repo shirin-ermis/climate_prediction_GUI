@@ -9,7 +9,6 @@ from .version_info import VERSION_INT, VERSION  # noqa
 # Template:
 # from .<file> import <Class> # noqa
 # e.g. from .model import Model    # noqa
-from .model import Model  # noqa
 from .controller import Controller  # noqa
 from .view import View  # noqa
 from .plot import Plot # noqa
