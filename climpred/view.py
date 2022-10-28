@@ -37,6 +37,10 @@ class View(tk.Tk):
 
         self._center_window()
 
+        self._make_faq_button()
+
+        # self._make_new_window()
+
     def main(self):
         self.mainloop()
 
@@ -61,7 +65,10 @@ class View(tk.Tk):
         for widgets in self.graph_frame.winfo_children():
             widgets.destroy()
         figure_canvas = FigureCanvasTkAgg(plot_obj.plot, self.graph_frame)
-        figure_canvas.get_tk_widget().grid(row=0, ipadx=150, ipady=100, sticky="ns")
+        figure_canvas.get_tk_widget().grid(row=0,
+                                           ipadx=150,
+                                           ipady=100,
+                                           sticky="ns")
 
     def _center_window(self):
         self.update()
@@ -79,7 +86,8 @@ class View(tk.Tk):
     def _make_cloud_cover_slider(self):
 
         self.slider = tk.Scale(self.control_frame, from_=0, to=100,
-                               orient=tk.HORIZONTAL, length=250, label="Cloud Cover as %")
+                               orient=tk.HORIZONTAL, length=250,
+                               label="Cloud Cover as %")
         self.slider.set(0)
         self.slider.grid(row=1)
 
@@ -87,3 +95,13 @@ class View(tk.Tk):
         self.btn = tk.Button(self.control_frame, text="Calculate model",
                              command=self.controller._on_press_calculate_button) # noqa
         self.btn.grid(row=0)
+
+    def _make_faq_button(self):
+        self.btn = tk.Button(self.control_frame, text="Model FAQ",
+                             command=self.controller._on_press_faq_button) # noqa
+        self.btn.grid(row=0, column=1)
+
+    def _make_new_window(self):
+        pass
+        # new_window = tk.Toplevel()
+        # tk.Label(master=new_window, text="This is a new window").pack()
