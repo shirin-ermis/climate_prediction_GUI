@@ -76,16 +76,62 @@ class ViewTest(unittest.TestCase):
 
     def test_make_cloud_cover_slider(self):
         view._make_cloud_cover_slider()
-        self.assertEqual(view.slider.get(), 0)
-        self.assertEqual(view.slider['orient'], 'horizontal')
-        self.assertEqual(view.slider['from'], 0.0)
-        self.assertEqual(view.slider['to'], 100.0)
-        self.assertEqual(view.slider['label'], "Cloud Cover as %")
+        self.assertEqual(view.cloud_cover_slider.get(), 0)
+        self.assertEqual(view.cloud_cover_slider['orient'], 'horizontal')
+        self.assertEqual(view.cloud_cover_slider['from'], 0.0)
+        self.assertEqual(view.cloud_cover_slider['to'], 1.0)
+        self.assertEqual(view.cloud_cover_slider['label'], "Cloud Cover")
+        self.assertEqual(view.cloud_cover_slider['resolution'], 0.01)
 
     def test_make_calculate_button(self):
         view._make_calculate_button
         view.btn.invoke()
         self.assertEqual(view.btn['text'], "Calculate model")
+
+    def test_make_epsilon_1_slider(self):
+        view._make_epsilon_1_slider()
+        self.assertEqual(view.epsilon_1_slider.get(), 0.01)
+        self.assertEqual(view.epsilon_1_slider['orient'], 'horizontal')
+        self.assertEqual(view.epsilon_1_slider['from'], 0.01)
+        self.assertEqual(view.epsilon_1_slider['to'], 1.0)
+        self.assertEqual(view.epsilon_1_slider['label'], "Emissivity for lower layer")
+        self.assertEqual(view.epsilon_1_slider['resolution'], 0.01)
+
+    def test_make_epsilon_2_slider(self):
+        view._make_epsilon_2_slider()
+        self.assertEqual(view.epsilon_2_slider.get(), 0.01)
+        self.assertEqual(view.epsilon_2_slider['orient'], 'horizontal')
+        self.assertEqual(view.epsilon_2_slider['from'], 0.01)
+        self.assertEqual(view.epsilon_2_slider['to'], 1.0)
+        self.assertEqual(view.epsilon_2_slider['label'], "Emissivity for upper layer")
+        self.assertEqual(view.epsilon_2_slider['resolution'], 0.01)
+
+    def test_make_S_0_slider(self):
+        view._make_S_0_slider()
+        self.assertEqual(view.S_0_slider.get(), 10)
+        self.assertEqual(view.S_0_slider['orient'], 'horizontal')
+        self.assertEqual(view.S_0_slider['from'], 10.0)
+        self.assertEqual(view.S_0_slider['to'], 2000.0)
+        self.assertEqual(view.S_0_slider['label'], "Solar Constant (W/m^(-2))")
+        self.assertEqual(view.S_0_slider['resolution'], 10)
+
+    def test_make_H_S_slider(self):
+        view._make_H_S_slider()
+        self.assertEqual(view.H_S_slider.get(), 0)
+        self.assertEqual(view.H_S_slider['orient'], 'horizontal')
+        self.assertEqual(view.H_S_slider['from'], 0.0)
+        self.assertEqual(view.H_S_slider['to'], 200.0)
+        self.assertEqual(view.H_S_slider['label'], "Convective flux for upper layer (W/m^(-2))")
+        self.assertEqual(view.H_S_slider['resolution'], 10)
+
+    def test_make_H_L_slider(self):
+        view._make_H_L_slider()
+        self.assertEqual(view.H_L_slider.get(), 0)
+        self.assertEqual(view.H_L_slider['orient'], 'horizontal')
+        self.assertEqual(view.H_L_slider['from'], 0.0)
+        self.assertEqual(view.H_L_slider['to'], 200.0)
+        self.assertEqual(view.H_L_slider['label'], "Convective flux for lower layer (W/m^(-2))")
+        self.assertEqual(view.H_L_slider['resolution'], 10)
 
 
 if __name__ == "__main__":
