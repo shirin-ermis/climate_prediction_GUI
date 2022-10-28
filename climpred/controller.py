@@ -10,7 +10,6 @@ class Controller():
     """
 
     def __init__(self):
-        self.model = cp.Model()
         self.view = cp.View(self)
 
     def main(self):

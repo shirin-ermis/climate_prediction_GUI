@@ -51,7 +51,7 @@ class View(tk.Tk):
 
         self._make_faq_button()
 
-        # self._make_new_window()
+        self._make_graph_label()
 
     def main(self):
         self.mainloop()
@@ -66,7 +66,7 @@ class View(tk.Tk):
 
     def _make_graph_frame(self):
         self.graph_frame = ttk.Frame(self.main_frm)
-        self.graph_frame.grid(column=1, row=0, sticky="ns")
+        self.graph_frame.grid(column=1, row=0, sticky="ns", padx=20)
 
     def _initiate_graph(self):
         my_dummy_plot = cp.Plot([0, 0, 0])
@@ -77,26 +77,29 @@ class View(tk.Tk):
         for widgets in self.graph_frame.winfo_children():
             widgets.destroy()
         figure_canvas = FigureCanvasTkAgg(plot_obj.plot, self.graph_frame)
-        figure_canvas.get_tk_widget().grid(row=0, ipadx=150, ipady=100,
+        figure_canvas.get_tk_widget().grid(row=1, ipadx=150, ipady=50,
                                            sticky="ns")
+        self._make_graph_label()
 
     def _center_window(self):
         self.update()
 
-        width = self.winfo_width()
-        height = self.winfo_height()
+        # width = self.winfo_width()
+        # height = self.winfo_height()
 
-        x_offset = (self.winfo_screenwidth() - width) // 2
-        y_offset = (self.winfo_screenheight() - height) // 2
+        # x_offset = (self.winfo_screenwidth() - width) // 2
+        # y_offset = (self.winfo_screenheight() - height) // 2
 
-        self.geometry(
-            f'{width}x{height}+{x_offset}+{y_offset}'
-        )
+        self.geometry("1920x1080")
+
+        # self.geometry(
+        #     f'{width}x{height}+{x_offset}+{y_offset}'
+        # )
 
     def _make_cloud_cover_slider(self):
         self.cloud_cover_slider = tk.Scale(
             self.control_frame, from_=0, to=1,
-            orient=tk.HORIZONTAL, length=250,
+            orient=tk.HORIZONTAL, length=300,
             label="Cloud Cover", resolution=0.01
         )
         self.cloud_cover_slider.set(0)
@@ -110,7 +113,7 @@ class View(tk.Tk):
     def _make_faq_button(self):
         self.btn_faq = tk.Button(self.control_frame, text="Model FAQ",
                              command=self.controller._on_press_faq_button) # noqa
-        self.btn_faq.grid(row=0, column=1)
+        self.btn_faq.grid(row=0, column=1, padx=20)
 
     def _make_new_window(self):
         pass
@@ -120,7 +123,7 @@ class View(tk.Tk):
     def _make_epsilon_1_slider(self):
         self.epsilon_1_slider = tk.Scale(
             self.control_frame, from_=0.01, to=1,
-            orient=tk.HORIZONTAL, length=250,
+            orient=tk.HORIZONTAL, length=300,
             label="Emissivity for lower layer", resolution=0.01
         )
         self.epsilon_1_slider.set(0.01)
@@ -129,7 +132,7 @@ class View(tk.Tk):
     def _make_epsilon_2_slider(self):
         self.epsilon_2_slider = tk.Scale(
             self.control_frame, from_=0.01, to=1,
-            orient=tk.HORIZONTAL, length=250,
+            orient=tk.HORIZONTAL, length=300,
             label="Emissivity for upper layer", resolution=0.01
         )
         self.epsilon_2_slider.set(0.01)
@@ -138,7 +141,7 @@ class View(tk.Tk):
     def _make_S_0_slider(self):
         self.S_0_slider = tk.Scale(
             self.control_frame, from_=10, to=2000,
-            orient=tk.HORIZONTAL, length=250,
+            orient=tk.HORIZONTAL, length=300,
             label="Solar Constant (W/m^(-2))", resolution=10
         )
         self.S_0_slider.set(10)
@@ -147,7 +150,7 @@ class View(tk.Tk):
     def _make_H_S_slider(self):
         self.H_S_slider = tk.Scale(
             self.control_frame, from_=0, to=200,
-            orient=tk.HORIZONTAL, length=250,
+            orient=tk.HORIZONTAL, length=300,
             label="Convective flux for upper layer (W/m^(-2))", resolution=10
         )
         self.H_S_slider.set(0)
@@ -156,7 +159,7 @@ class View(tk.Tk):
     def _make_H_L_slider(self):
         self.H_L_slider = tk.Scale(
             self.control_frame, from_=0, to=200,
-            orient=tk.HORIZONTAL, length=250,
+            orient=tk.HORIZONTAL, length=300,
             label="Convective flux for lower layer (W/m^(-2))", resolution=10
         )
         self.H_L_slider.set(0)
@@ -238,3 +241,19 @@ class View(tk.Tk):
                                                 text="Calculate model",
                              command=self.controller._on_press_advanced_calculate_button) # noqa
         self.advanced_calculate_btn.grid(row=8)
+
+    def _make_graph_label(self):
+        raw_text = "This is an atmospheric temperature profile generated \
+                    by a highly simplified radiative transfer model. It \
+                    calculates the temperature at a range of points \
+                    (initially three) \
+                    from the Earth's surface to the top of the atmosphere. \
+                    The input parameters are the percentage of planetary \
+                    cloud cover, the emissitivity/absorptivity of the \
+                    two atmospheric layers, the convective flux within the \
+                    layers, and the solar constant."
+
+        self.graph_label = tk.Label(self.graph_frame,
+                                    text=raw_text,
+                                    wraplength=700)
+        self.graph_label.grid(row=0)

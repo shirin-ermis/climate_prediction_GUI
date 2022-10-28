@@ -5,7 +5,7 @@
 
 # Climate Prediction GUI!
 
-Climate prediction GUI is a package that generates a simple model of vertical energy transfer and temperatures in the Earth system. This model assumes a two-layered atmosphere, to which both layers absorb and reradiate a proportion of the outgoing infrared radiation. The atmosphere is assumed to be transparent to incoming radiation, but with a certain ratio reflected (as determined by the albedo, &alpha). 
+Climate prediction GUI is a package that generates a simple model of vertical energy transfer and temperatures in the Earth system. This model assumes a two-layered atmosphere, to which both layers absorb and reradiate a proportion of the outgoing infrared radiation. The atmosphere is assumed to be transparent to incoming shortwave radiation assuming an albedo $\alpha$. The albedo in turn is determined by the cloudcover.
 
 The package solves for the temperature of the surface and the two layers in the atmosphere. Users can adjust the values through the GUI, and the temperature profile will be automatically updated to reflect the results from the changed input.
 
