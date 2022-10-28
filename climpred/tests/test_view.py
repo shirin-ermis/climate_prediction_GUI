@@ -196,7 +196,7 @@ class ViewTest(unittest.TestCase):
     def test_Advanced_Calculate_Button(self):
         # testing for advanced calculate button
         view._create_advanced_window()
-        
+
         view.advanced_calculate_btn.invoke()
         self.assertEqual(view.btn['text'], "Calculate model")
 
