@@ -2,8 +2,6 @@
 # test_controller.py
 #
 import unittest
-
-from pyparsing import Empty
 import climpred as cp
 
 
@@ -15,7 +13,6 @@ class ControllerTest(unittest.TestCase):
     ctrl = cp.Controller()
 
     def test_init(self):
-        isinstance(ctrl.model, type(cp.Model()))
         isinstance(ctrl.view, type(cp.View(ctrl)))
 
     def test_on_press_calculate_button(self):
