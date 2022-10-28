@@ -243,7 +243,7 @@ class View(tk.Tk):
         self.advanced_calculate_btn.grid(row=8)
 
     def _make_graph_label(self):
-        f = open('top-bar-explanation.txt', 'r')
+        f = open('./top-bar-explanation.txt', 'r')
         raw_text = f.read()
         self.graph_label = tk.Label(self.graph_frame,
                                     text=raw_text,
