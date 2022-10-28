@@ -93,7 +93,7 @@ class Controller():
         new_window.grid_rowconfigure(0, weight=1)
 
         # Add a text in Canvas
-        file_text = open('FAQ.txt', 'r')
+        file_text = open('./FAQ.txt', 'r')
         raw_text = str(file_text.read())
         # markdown_text = markdown.markdown(file_text.read())
         canvas.create_text(10, 10,
