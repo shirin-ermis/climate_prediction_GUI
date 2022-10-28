@@ -20,10 +20,6 @@ Install the application by downloading the files below based on your operating s
 - Windows: `climateprediction.exe`  
 - Linux: `climateprediction`
 
-## Usage
-
-## See also
-
 ## Authors and acknowledgment
 The authors are [Kallista Angeloff][1], [Shirin Ermis][2], [Justin Leung][3], [Adrian Mag][4], [Spencer Pevsner][5] and [Sam Scivier][6]. 
 
@@ -33,5 +29,6 @@ The authors are [Kallista Angeloff][1], [Shirin Ermis][2], [Justin Leung][3], [A
 [4]: https://github.com/Adrian-Mag
 [5]: https://github.com/synapsidfan
 [6]: https://github.com/sscivier
+
 ## License
 This project uses the [MIT](https://choosealicense.com/licenses/mit/) license. See [LICENSE](https://github.com/shirin-ermis/climate_prediction_GUI/blob/%234readme/LICENSE) for more information. 
