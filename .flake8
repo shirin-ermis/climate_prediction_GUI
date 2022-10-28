@@ -30,4 +30,7 @@ ignore=
     # Binary operator on new line
     # This is now advised in pep8
     W503,
-
+    
+    # This is just a pain
+    # "Code is too complex"
+    C901,
