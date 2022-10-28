@@ -62,9 +62,9 @@ class ViewTest(unittest.TestCase):
     def test_make_graph(self):
         graph_info = view.graph_frame.winfo_children()[0].grid_info()
 
-        self.assertEqual(graph_info['row'], 0)
+        self.assertEqual(graph_info['row'], 1)
         self.assertEqual(graph_info['ipadx'], 150)
-        self.assertEqual(graph_info['ipady'], 100)
+        self.assertEqual(graph_info['ipady'], 50)
         self.assertEqual(graph_info['sticky'], 'ns')
 
     def test_center_window(self):
@@ -211,7 +211,8 @@ class ViewTest(unittest.TestCase):
         view._create_advanced_window()
 
         view.advanced_calculate_btn.invoke()
-        self.assertEqual(view.advanced_calculate_btn['text'], "Calculate model")
+        self.assertEqual(view.advanced_calculate_btn['text'],
+                         "Calculate model")
 
 
 if __name__ == "__main__":
