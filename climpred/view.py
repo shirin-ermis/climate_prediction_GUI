@@ -66,7 +66,7 @@ class View(tk.Tk):
 
     def _make_graph_frame(self):
         self.graph_frame = ttk.Frame(self.main_frm)
-        self.graph_frame.grid(column=1, row=0, sticky="ns")
+        self.graph_frame.grid(column=1, row=0, sticky="ns", padx=20)
 
     def _initiate_graph(self):
         my_dummy_plot = cp.Plot([0, 0, 0])
@@ -113,7 +113,9 @@ class View(tk.Tk):
     def _make_faq_button(self):
         self.btn_faq = tk.Button(self.control_frame, text="Model FAQ",
                              command=self.controller._on_press_faq_button) # noqa
-        self.btn_faq.grid(row=0, column=1)
+        self.btn_faq.grid(row=0, column=1, padx=20)
+        #self.btn_faq.columnconfigure(0, minsize=100, pad=200, weight=2)
+        # self.btn_faq.place(relx=0.9, rely=0.1, anchor='e')
 
     def _make_new_window(self):
         pass
