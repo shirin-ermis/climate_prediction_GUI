@@ -86,8 +86,8 @@ class ViewTest(unittest.TestCase):
 
     def test_make_calculate_button(self):
         view._make_calculate_button
-        view.btn.invoke()
-        self.assertEqual(view.btn['text'], "Calculate model")
+        view.btn_calc.invoke()
+        self.assertEqual(view.btn_calc['text'], "Calculate model")
 
     def test_make_epsilon_1_slider(self):
         view._make_epsilon_1_slider()
@@ -211,7 +211,7 @@ class ViewTest(unittest.TestCase):
         view._create_advanced_window()
 
         view.advanced_calculate_btn.invoke()
-        self.assertEqual(view.btn['text'], "Calculate model")
+        self.assertEqual(view.advanced_calculate_btn['text'], "Calculate model")
 
 
 if __name__ == "__main__":

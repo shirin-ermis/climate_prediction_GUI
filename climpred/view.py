@@ -49,6 +49,10 @@ class View(tk.Tk):
 
         self._make_advanced_button()
 
+        self._make_faq_button()
+
+        # self._make_new_window()
+
     def main(self):
         self.mainloop()
 
@@ -99,9 +103,19 @@ class View(tk.Tk):
         self.cloud_cover_slider.grid(row=1)
 
     def _make_calculate_button(self):
-        self.btn = tk.Button(self.control_frame, text="Calculate model",
+        self.btn_calc = tk.Button(self.control_frame, text="Calculate model",
                              command=self.controller._on_press_calculate_button) # noqa
-        self.btn.grid(row=0)
+        self.btn_calc.grid(row=0)
+
+    def _make_faq_button(self):
+        self.btn_faq = tk.Button(self.control_frame, text="Model FAQ",
+                             command=self.controller._on_press_faq_button) # noqa
+        self.btn_faq.grid(row=0, column=1)
+
+    def _make_new_window(self):
+        pass
+        # new_window = tk.Toplevel()
+        # tk.Label(master=new_window, text="This is a new window").pack()
 
     def _make_epsilon_1_slider(self):
         self.epsilon_1_slider = tk.Scale(
