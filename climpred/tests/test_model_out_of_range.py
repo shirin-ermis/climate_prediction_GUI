@@ -1,5 +1,5 @@
 import unittest
-
+import tkinter as tk
 from numpy import NaN
 import climpred as cp
 
@@ -14,7 +14,7 @@ class RangeTest(unittest.TestCase):
         are beyond plot limits.
         """
         self.assertEqual(cp._check_model_range([-100, 0, 100]), None)
-
+        tk.destroy('all')
         self.assertEqual(cp._check_model_range([-101, 3, 5]), 1)
         self.assertEqual(cp._check_model_range([-20, 90, 101]), 1)
 

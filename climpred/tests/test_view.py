@@ -157,10 +157,12 @@ class ViewTest(unittest.TestCase):
         view._create_advanced_window()
 
         self.assertEqual(view.advanced_cloud_cover_slider.get(), 0)
-        self.assertEqual(view.advanced_cloud_cover_slider['orient'], 'horizontal')
+        self.assertEqual(view.advanced_cloud_cover_slider['orient'],
+                         'horizontal')
         self.assertEqual(view.advanced_cloud_cover_slider['from'], 0.0)
         self.assertEqual(view.advanced_cloud_cover_slider['to'], 1.0)
-        self.assertEqual(view.advanced_cloud_cover_slider['label'], "Cloud Cover")
+        self.assertEqual(view.advanced_cloud_cover_slider['label'],
+                         "Cloud Cover")
         self.assertEqual(view.advanced_cloud_cover_slider['resolution'], 0.01)
 
     def test_Number_of_Layers_Entry(self):
@@ -169,7 +171,8 @@ class ViewTest(unittest.TestCase):
 
         isinstance(view.layers, type(tk.StringVar))
         self.assertEqual(view.advanced_layers_entry['justify'], 'right')
-        self.assertEqual(view.advanced_frm.winfo_children()[2]['text'], 'Number of layers')
+        self.assertEqual(view.advanced_frm.winfo_children()[2]['text'],
+                         'Number of layers')
 
     def test_Advanced_Epsilon_Entry(self):
         # testing for Advanced Epsilon Entry
@@ -177,7 +180,8 @@ class ViewTest(unittest.TestCase):
 
         isinstance(view.epsilon, type(tk.StringVar))
         self.assertEqual(view.advanced_epsilon_entry['justify'], 'right')
-        self.assertEqual(view.advanced_frm.winfo_children()[4]['text'], 'Emmisivity vector')
+        self.assertEqual(view.advanced_frm.winfo_children()[4]['text'],
+                         'Emmisivity vector')
 
     def test_Advanced_H_Entry(self):
         # testing for Advanced H Entry
@@ -185,18 +189,22 @@ class ViewTest(unittest.TestCase):
 
         isinstance(view.layers, type(tk.StringVar))
         self.assertEqual(view.advanced_layers_entry['justify'], 'right')
-        self.assertEqual(view.advanced_frm.winfo_children()[6]['text'], 'Convective flux vector')
+        self.assertEqual(view.advanced_frm.winfo_children()[6]['text'],
+                         'Convective flux vector')
 
     def test_Advanced_Solar_Constant_Slider(self):
         # testing for Advanced Solar Constant Slider
         view._create_advanced_window()
 
         self.assertEqual(view.advanced_solar_constant_slider.get(), 10.0)
-        self.assertEqual(view.advanced_solar_constant_slider['orient'], 'horizontal')
+        self.assertEqual(view.advanced_solar_constant_slider['orient'],
+                         'horizontal')
         self.assertEqual(view.advanced_solar_constant_slider['from'], 10.0)
         self.assertEqual(view.advanced_solar_constant_slider['to'], 2000.0)
-        self.assertEqual(view.advanced_solar_constant_slider['label'], "Solar constant")
-        self.assertEqual(view.advanced_solar_constant_slider['resolution'], 0.01)
+        self.assertEqual(view.advanced_solar_constant_slider['label'],
+                         "Solar constant")
+        self.assertEqual(view.advanced_solar_constant_slider['resolution'],
+                         0.01)
 
     def test_Advanced_Calculate_Button(self):
         # testing for advanced calculate button
