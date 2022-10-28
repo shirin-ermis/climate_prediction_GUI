@@ -1,10 +1,10 @@
 import unittest
-import climpred as cp
-import tkinter as tk
 
 
 class TestTemperatureVector(unittest.TestCase):
     pass
+
+
 """     def test_empty_layers(self):
         layers = ['']
         epsilons = ['']
