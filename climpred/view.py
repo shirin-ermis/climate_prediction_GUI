@@ -51,7 +51,7 @@ class View(tk.Tk):
 
         self._make_faq_button()
 
-        # self._make_new_window()
+        self._make_graph_label()
 
     def main(self):
         self.mainloop()
@@ -77,21 +77,24 @@ class View(tk.Tk):
         for widgets in self.graph_frame.winfo_children():
             widgets.destroy()
         figure_canvas = FigureCanvasTkAgg(plot_obj.plot, self.graph_frame)
-        figure_canvas.get_tk_widget().grid(row=0, ipadx=150, ipady=100,
+        figure_canvas.get_tk_widget().grid(row=1, ipadx=150, ipady=50,
                                            sticky="ns")
+        self._make_graph_label()
 
     def _center_window(self):
         self.update()
 
-        width = self.winfo_width()
-        height = self.winfo_height()
+        # width = self.winfo_width()
+        # height = self.winfo_height()
 
-        x_offset = (self.winfo_screenwidth() - width) // 2
-        y_offset = (self.winfo_screenheight() - height) // 2
+        # x_offset = (self.winfo_screenwidth() - width) // 2
+        # y_offset = (self.winfo_screenheight() - height) // 2
 
-        self.geometry(
-            f'{width}x{height}+{x_offset}+{y_offset}'
-        )
+        self.geometry("1920x1080")
+
+        # self.geometry(
+        #     f'{width}x{height}+{x_offset}+{y_offset}'
+        # )
 
     def _make_cloud_cover_slider(self):
         self.cloud_cover_slider = tk.Scale(
@@ -238,3 +241,11 @@ class View(tk.Tk):
                                                 text="Calculate model",
                              command=self.controller._on_press_advanced_calculate_button) # noqa
         self.advanced_calculate_btn.grid(row=8)
+
+    def _make_graph_label(self):
+        f = open('top-bar-explanation.txt', 'r')
+        raw_text = f.read()
+        self.graph_label = tk.Label(self.graph_frame,
+                                    text=raw_text,
+                                    wraplength=700)
+        self.graph_label.grid(row=0)
