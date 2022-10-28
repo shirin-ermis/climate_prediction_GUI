@@ -46,7 +46,7 @@ class Controller():
 
         # Check if inputs are valid
         flag = cp._check_inputs(layers, epsilons, H)
-        if flag == 1:
+        if flag is not None:
             flag = 0
             return
 
