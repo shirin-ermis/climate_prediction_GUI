@@ -1,6 +1,7 @@
 import tkinter as tk
 import numpy as np
 
+
 def _check_model_range(temperatures):
     if max(temperatures) > 100 or min(temperatures) < -100:
         tk.messagebox.showwarning("Model out of range",

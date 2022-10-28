@@ -1,6 +1,7 @@
 import climpred as cp
 import numpy as np
 
+
 class Controller():
     """
     Main controller

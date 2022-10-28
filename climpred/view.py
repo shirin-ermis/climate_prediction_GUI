@@ -149,7 +149,8 @@ class View(tk.Tk):
         self.H_L_slider.grid(row=5)
 
     def _make_advanced_button(self):
-        self.advanced_btn = tk.Button(self.control_frame, text="Advanced model",
+        self.advanced_btn = tk.Button(self.control_frame,
+                                      text="Advanced model",
                              command=self.controller._on_press_advanced_button) # noqa
         self.advanced_btn.grid(row=8)
 
@@ -206,7 +207,8 @@ class View(tk.Tk):
             textvariable=self.H,
         )
         self.advanced_H_entry.grid(row=6)
-        self.label = tk.Label(self.advanced_frm, text='Convective flux vector').grid(row=5)
+        self.label = tk.Label(self.advanced_frm,
+                              text='Convective flux vector').grid(row=5)
 
         # Create advanced Solcar constant slider
         self.advanced_solar_constant_slider = tk.Scale(
@@ -218,6 +220,7 @@ class View(tk.Tk):
         self.advanced_solar_constant_slider.grid(row=7)
 
         # Create advanced calculate button
-        self.advanced_calculate_btn = tk.Button(self.advanced_frm, text="Calculate model",
+        self.advanced_calculate_btn = tk.Button(self.advanced_frm,
+                                                text="Calculate model",
                              command=self.controller._on_press_advanced_calculate_button) # noqa
         self.advanced_calculate_btn.grid(row=8)
