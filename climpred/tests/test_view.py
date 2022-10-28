@@ -94,7 +94,8 @@ class ViewTest(unittest.TestCase):
         self.assertEqual(view.epsilon_1_slider['orient'], 'horizontal')
         self.assertEqual(view.epsilon_1_slider['from'], 0.01)
         self.assertEqual(view.epsilon_1_slider['to'], 1.0)
-        self.assertEqual(view.epsilon_1_slider['label'], "Emissivity for lower layer")
+        self.assertEqual(view.epsilon_1_slider['label'],
+                         "Emissivity for lower layer")
         self.assertEqual(view.epsilon_1_slider['resolution'], 0.01)
 
     def test_make_epsilon_2_slider(self):
@@ -103,7 +104,8 @@ class ViewTest(unittest.TestCase):
         self.assertEqual(view.epsilon_2_slider['orient'], 'horizontal')
         self.assertEqual(view.epsilon_2_slider['from'], 0.01)
         self.assertEqual(view.epsilon_2_slider['to'], 1.0)
-        self.assertEqual(view.epsilon_2_slider['label'], "Emissivity for upper layer")
+        self.assertEqual(view.epsilon_2_slider['label'],
+                         "Emissivity for upper layer")
         self.assertEqual(view.epsilon_2_slider['resolution'], 0.01)
 
     def test_make_S_0_slider(self):
@@ -112,7 +114,8 @@ class ViewTest(unittest.TestCase):
         self.assertEqual(view.S_0_slider['orient'], 'horizontal')
         self.assertEqual(view.S_0_slider['from'], 10.0)
         self.assertEqual(view.S_0_slider['to'], 2000.0)
-        self.assertEqual(view.S_0_slider['label'], "Solar Constant (W/m^(-2))")
+        self.assertEqual(view.S_0_slider['label'],
+                         "Solar Constant (W/m^(-2))")
         self.assertEqual(view.S_0_slider['resolution'], 10)
 
     def test_make_H_S_slider(self):
@@ -121,7 +124,8 @@ class ViewTest(unittest.TestCase):
         self.assertEqual(view.H_S_slider['orient'], 'horizontal')
         self.assertEqual(view.H_S_slider['from'], 0.0)
         self.assertEqual(view.H_S_slider['to'], 200.0)
-        self.assertEqual(view.H_S_slider['label'], "Convective flux for upper layer (W/m^(-2))")
+        self.assertEqual(view.H_S_slider['label'],
+                         "Convective flux for upper layer (W/m^(-2))")
         self.assertEqual(view.H_S_slider['resolution'], 10)
 
     def test_make_H_L_slider(self):
@@ -130,8 +134,14 @@ class ViewTest(unittest.TestCase):
         self.assertEqual(view.H_L_slider['orient'], 'horizontal')
         self.assertEqual(view.H_L_slider['from'], 0.0)
         self.assertEqual(view.H_L_slider['to'], 200.0)
-        self.assertEqual(view.H_L_slider['label'], "Convective flux for lower layer (W/m^(-2))")
+        self.assertEqual(view.H_L_slider['label'],
+                         "Convective flux for lower layer (W/m^(-2))")
         self.assertEqual(view.H_L_slider['resolution'], 10)
+
+    def test_create_advanced_window(self):
+        view._create_advanced_window()
+        self.assertEqual(view.advanced_Window.title(), 'Advanced modeller')
+        # self.assertEqual(view.advanced_Window.geometry(), '255x350')
 
 
 if __name__ == "__main__":
