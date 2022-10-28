@@ -243,8 +243,16 @@ class View(tk.Tk):
         self.advanced_calculate_btn.grid(row=8)
 
     def _make_graph_label(self):
-        f = open('./top-bar-explanation.txt', 'r')
-        raw_text = f.read()
+        raw_text = "This is an atmospheric temperature profile generated \
+                    by a highly simplified radiative transfer model. It \
+                    calculates the temperature at a range of points \
+                    (initially three) \
+                    from the Earth's surface to the top of the atmosphere. \
+                    The input parameters are the percentage of planetary \
+                    cloud cover, the emissitivity/absorptivity of the \
+                    two atmospheric layers, the convective flux within the \
+                    layers, and the solar constant."
+
         self.graph_label = tk.Label(self.graph_frame,
                                     text=raw_text,
                                     wraplength=700)
